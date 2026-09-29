@@ -1,0 +1,362 @@
+\documentclass[11pt]{article}
+
+% ---------- Page & Font ----------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- Math & Units ----------
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\sisetup{per-mode=symbol}
+
+% ---------- Figures & Tables ----------
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[table]{xcolor}
+
+% ---------- Code Listings (C, C++, Rust) ----------
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{codegray}{RGB}{110,110,110}
+\definecolor{codeblue}{RGB}{0,80,180}
+\definecolor{codegreen}{RGB}{0,120,0}
+\definecolor{codered}{RGB}{170,0,0}
+
+\lstdefinelanguage{Rust}{
+  keywords={fn, let, mut, pub, struct, enum, impl, trait, for, while, loop, if, else, match, return, use, mod, crate, self, Self, in, as, ref, move, unsafe, dyn, where, const, static, type},
+  keywordstyle=\color{codeblue}\bfseries,
+  ndkeywords={u8,u16,u32,u64,usize,i8,i16,i32,i64,isize,f32,f64,bool,char,str,String,Vec,Option,Result,Box},
+  ndkeywordstyle=\color{codegreen},
+  identifierstyle=\color{black},
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{codegray}\itshape,
+  stringstyle=\color{codered},
+  morestring=[b]",
+}
+
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  breakatwhitespace=false,
+  frame=single,
+  rulecolor=\color{black!20},
+  numbers=left,
+  numberstyle=\tiny\color{codegray},
+  numbersep=8pt,
+  showstringspaces=false,
+  tabsize=2,
+  captionpos=b,
+  keywordstyle=\color{codeblue}\bfseries,
+  commentstyle=\color{codegray}\itshape,
+  stringstyle=\color{codered},
+}
+
+% Convenience environments per language
+\lstnewenvironment{ccode}[1][]{\lstset{language=C,#1}}{}
+\lstnewenvironment{cppcode}[1][]{\lstset{language=C++,#1}}{}
+\lstnewenvironment{rustcode}[1][]{\lstset{language=Rust,#1}}{}
+
+% ---------- Misc ----------
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+\usepackage{enumitem}
+\usepackage{xurl}
+
+% ---------- Custom colored boxes for special sections ----------
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{hypothesisbox}{
+  colback=blue!4, colframe=blue!50!black, title=Pre-Experiment Hypothesis,
+  fonttitle=\bfseries, breakable
+}
+\newtcolorbox{failurebox}{
+  colback=red!4, colframe=red!50!black, title=Negative / Failure Case,
+  fonttitle=\bfseries, breakable
+}
+\newtcolorbox{anomalybox}{
+  colback=yellow!8, colframe=orange!70!black, title=Honest Anomalies,
+  fonttitle=\bfseries, breakable
+}
+
+% ---------- Title Info ----------
+\title{\textbf{ECSE-6320 Advanced Computer Systems \\ Project 2 Report}}
+\author{Cooper Werner \\\small Rensselaer Polytechnic Institute \\ \small wernec6@rpi.edu \\ \small RIN: 662058426}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	% One-paragraph summary: what was tested, what was expected, what was found.
+
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% =====================================================
+\section{Introduction}
+% Context, motivation, system under test, and objective of this experiment.
+
+% =====================================================
+
+The goal of this project is to analyze how the memory hierarchy impacts performance of the simple computations as the
+working set size, data stride \& access pattern, read-write ratio, access intensity, and page size changes.
+
+To do this I will use 4 different computational kernels:
+
+\begin{enumerate}
+	\item Array Reduction, Summing all values of an array: 100\% read.
+	\item Memset, setting all values in an array to one value: 100\% write.
+	\item Vector-Vector Multiply, element-wise multiplication of two vectors: 66\% read / 33\% write.
+	\item Scalar-Vector Multiply, element-wise multiplication with a scalar: 50 \% read / 50\% write.
+\end{enumerate}
+
+To change the other experimental variables, I have a main kernel runner that can control the working set size, the
+stride of the data, run with random access patterns, number of threads accessing the data. To be able to control the
+page size, I will be running this code in a Linux VM where I can set the memory page size to either 4KiB or 2MiB.
+
+\section{Pre-Experiment Hypotheses}
+
+\begin{hypothesisbox}
+	\textbf{Hypothesis:} \\
+	% State the falsifiable prediction before running anything.
+
+	Huge pages will help with reducing the number of TLB misses. However, this will only help when the working set size is
+	large, for small working sets that fit into a small number of pages, the larger page sizes will have little if any
+	impact on performance.
+
+	\textbf{Reasoning:} \\
+	% Why do you expect this outcome? Reference architecture, prior results, theory.
+	For larger working set sizes, with small pages of 4KiB, the data will span potentially thousands of pages creating a
+	large number of TLB misses, each TLB miss causing a page fault and requiring a ring level switch to fetch a page
+	address. This ring level switch will become a large part of the the time spent during computation.
+
+	By switching to large pages, the larger working set data can fit into a fewer number of pages, reducing the number of
+	TLB cache misses and therefore reducing the time spent handling page faults, improving performance.
+
+	\textbf{Predicted quantitative outcome:} \\
+	\begin{center}
+		\captionof{table}{Huge Page Speedup}
+		\label{tab:hypothesis-huge-pages}
+		\begin{tabular}{lc}
+			\toprule
+			\textbf{Working Set Size} & \textbf{Huge Page Speedup} \\
+			\midrule
+			1,024                     & $1x$                       \\
+			16,384                    & $1.05x$                    \\
+			65,536                    & $1.1x$                     \\
+			1,048,576                 & $1.5x$                     \\
+			16,777,216                & $2x$                       \\
+			268,435,456               & $2.7x$                     \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{hypothesisbox}
+
+\begin{hypothesisbox}
+	\textbf{Hypothesis:} \\
+	% State the falsifiable prediction before running anything.
+
+	As the access pattern demonstrates lower spatial locality with larger strides and random access patterns, the
+	computational performance will drop significantly as there will be more cache misses.
+
+	\textbf{Reasoning:} \\
+	% Why do you expect this outcome? Reference architecture, prior results, theory.
+
+	The more sporadic access patterns will have to fetch from main memory more frequently, this will result in more
+	pipeline stalls as data is no longer resident in cache. With the smaller strides, more useful data will be in each
+	cache line and therefore more data will be able to be prefetched.
+
+	\textbf{Predicted quantitative outcome:} \\
+	% e.g., "Expect L2 miss rate to decrease by \SI{15}{\percent} \pm \SI{3}{\percent}"
+	\begin{center}
+		\captionof{table}{Predicted SIMD Slowdown relative to SIMD with 0 byte offset}
+		\label{tab:hypothesis-simd}
+		\begin{tabular}{lccc}
+			\toprule
+			\textbf{Stride Size (Elements)} & \textbf{Slowdown} \\
+			\midrule
+			1                               & $1x$              \\
+			2                               & $0.99x$           \\
+			4                               & $0.95x$           \\
+			8                               & $0.87x$           \\
+			16                              & $0.79x$           \\
+			32                              & $0.70x$           \\
+			64                              & $0.65x$           \\
+			128                             & $0.45x$           \\
+			256                             & $0.39x$           \\
+			Random                          & $0.25x$           \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{hypothesisbox}
+
+% =====================================================
+\section{Correctness Validation}
+% How do you know the system under test / measurement apparatus is functioning correctly
+% BEFORE trusting the results? E.g. reference outputs, checksums, sanity benchmarks,
+% comparison against known-good baseline, unit tests.
+
+\subsection{Validation Method}
+
+\subsection{Validation Results}
+
+\begin{table}[H]
+	\centering
+	\caption{Correctness validation summary}
+	\label{tab:validation}
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		Check & Expected & Observed \\
+		\midrule
+		      &          &          \\
+		      &          &          \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+% =====================================================
+\section{Measurement Discipline}
+% Describe methodology: isolation (core pinning, turbo/frequency scaling disabled, etc.),
+% number of trials, warm-up runs, statistical treatment (mean/median/stdev/CI),
+% timer resolution, environmental controls.
+
+\subsection{Experimental Setup}
+\begin{itemize}[leftmargin=1.5em]
+	\item \textbf{Hardware:} CPU: x86\_64 AMD Ryzen AI 7 350 w/ Radeon 860M (SIMD Support: SSE, SSE2, AVX, AVX2, AVX-512), Memory: 32GB LPDDR5 @ 5600MT/s Virtualized with VMWare Workstation, in a VM with 8 CPU cores and 16GB of RAM.
+	\item \textbf{OS / Kernel:} Pop\_OS! 24.04 Running Linux 7.0.11-76070011-generic running in VMWare Workstation
+	\item \textbf{Compiler \& Flags:} GCC 16.2.0, Flags: -O3
+	\item \textbf{Isolation techniques:} Ran on CPU0 with 100\% affinity, and -20 niceness (ensure no context switching)
+	\item \textbf{Trials per condition:} 10 trials per condition
+	\item \textbf{Timer / Instrumentation:} clock\_gettime(CLOCK\_MONOTONIC), perf for measuring TLB and memory events, Intel Memory Latency Checker
+\end{itemize}
+
+\subsection{Statistical Treatment}
+% Mean, stdev, confidence intervals, outlier rejection criteria (and whether/why applied).
+
+% =====================================================
+\section{Results}
+
+\subsection{Summary Figure}
+\begin{figure}[H]
+	\centering
+	% \includegraphics[width=0.85\textwidth]{figures/placeholder.png}
+	\caption{Caption describing the primary result.}
+	\label{fig:main-result}
+\end{figure}
+
+\subsection{Secondary Figures}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		% \includegraphics[width=\textwidth]{figures/placeholder1.png}
+		\caption{}
+		\label{fig:sub1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		% \includegraphics[width=\textwidth]{figures/placeholder2.png}
+		\caption{}
+		\label{fig:sub2}
+	\end{subfigure}
+	\caption{Side-by-side comparison of \dots}
+	\label{fig:sub-both}
+\end{figure}
+
+\subsection{Results Table}
+\begin{table}[H]
+	\centering
+	\caption{Quantitative results}
+	\label{tab:results}
+	\begin{tabular}{@{}lccc@{}}
+		\toprule
+		Configuration & Mean & Std.\ Dev. & N \\
+		\midrule
+		              &      &            &   \\
+		              &      &            &   \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\subsection{Relevant Code}
+
+% --- C example ---
+\begin{ccode}[caption={Benchmark kernel (C)}, label={lst:c-example}]
+	int main(void) {
+			// ...
+			return 0;
+		}
+\end{ccode}
+
+% --- C++ example ---
+\begin{cppcode}[caption={Measurement harness (C++)}, label={lst:cpp-example}]
+	#include <chrono>
+
+	int main() { auto start = std::chrono::high_resolution_clock::now(); // ... }
+\end{cppcode}
+
+% --- Rust example ---
+\begin{rustcode}[caption={Benchmark harness (Rust)}, label={lst:rust-example}]
+	fn main() {
+			let start = std::time::Instant::now();
+			// ...
+		}
+\end{rustcode}
+
+% =====================================================
+\section{Negative / Failure Case}
+
+\begin{failurebox}
+	\textbf{What failed:} \\
+	% Configuration, workload, or condition that did NOT behave as expected or hypothesized.
+
+	\textbf{Evidence:} \\
+	% Data, logs, or figure reference showing the failure.
+
+	\textbf{Root cause (if known):} \\
+
+\end{failurebox}
+
+% =====================================================
+\section{Honest Anomalies}
+
+\begin{anomalybox}
+	% Report unexplained results honestly, even if they don't fit the narrative.
+	% Include: what was observed, what was expected instead, and what was (or wasn't) ruled out.
+
+	\textbf{Anomaly 1:} \\
+
+	\textbf{Anomaly 2:} \\
+
+\end{anomalybox}
+
+% =====================================================
+\section{Discussion}
+% Tie hypothesis, validation, results, and anomalies together. Was the hypothesis supported,
+% refuted, or inconclusive? What would you do differently next time?
+
+% =====================================================
+\section{Conclusion}
+
+% =====================================================
+\appendix
+\section{Additional Data / Raw Logs}
+% Optional: full result dumps, extra plots, raw perf output, etc.
+
+\end{document}
