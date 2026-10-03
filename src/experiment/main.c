@@ -1,5 +1,6 @@
 #define _POSIX_C_SOURCE 200809L
 #include "inc/kernels.h"
+#include <assert.h>
 #include "inc/perf.h"
 
 #include <errno.h>
@@ -87,6 +88,40 @@ static void *run_worker(void *opaque) {
   return NULL;
 }
 
+/**
+ * @brief Copies tightly packed input elements into strided positions in output.
+ *
+ * @param input        Array of num_elements floats/doubles, tightly packed.
+ * @param output       Buffer of at least
+ *                     start_offset + ((num_elements - 1) * stride + 1) *
+ *                     element_size bytes.
+ * @param num_elements Number of floats/doubles in `input`.
+ * @param element_size Either 4 (float) or 8 (double).
+ * @param start_offset Number of leading bytes in `output` to leave as zero.
+ * @param stride       Spacing between successive elements, in units of
+ * element_size. Must be 1, 2, 4, or 8
+ */
+void format_input_data(const char *input, char *output, uint32_t num_elements,
+                       uint8_t element_size, uint8_t start_offset,
+                       uint8_t stride) {
+  assert((stride == 1 || stride == 2 || stride == 4 || stride == 8) &&
+         "Stride must be 1, 2, 4, or 8");
+  if (num_elements == 0)
+    return;
+  size_t total_size = start_offset +
+                      ((size_t)(num_elements - 1) * stride + 1) * element_size;
+
+  /* Zero everything first — this covers the leading start_offset bytes
+   * as well as any padding gaps introduced by stride > 1. */
+  memset(output, 0, total_size);
+
+  for (uint32_t i = 0; i < num_elements; ++i) {
+    const char *src = input + (size_t)i * element_size;
+    char *dst = output + start_offset + (size_t)i * stride * element_size;
+    memcpy(dst, src, element_size);
+  }
+}
+
 int main(int argc, char **argv) {
   const char *path_a = NULL, *path_x = NULL, *path_y = NULL;
   size_t n = 0, threads = 1, stride = 1, seed = 1;
@@ -166,7 +201,8 @@ int main(int argc, char **argv) {
       return 2;
     }
   }
-  if (!have_n || optind != argc || n == 0 || threads > n ||
+  if (!have_n || optind != argc || n == 0 || n > UINT32_MAX || threads > n ||
+      (stride != 1 && stride != 2 && stride != 4 && stride != 8) ||
       n - 1 > (SIZE_MAX - 1) / stride) {
     usage(argv[0]);
     return 2;
@@ -194,15 +230,44 @@ int main(int argc, char **argv) {
   }
 #endif
 
-  kernel_element *a = load_data(path_a, capacity, "a");
-  kernel_element *x = load_data(path_x, capacity, "x");
-  kernel_element *y = load_data(path_y, capacity, "y");
+  kernel_element *a = load_data(path_a, n, "a");
+  kernel_element *x = load_data(path_x, n, "x");
+  kernel_element *y = load_data(path_y, n, "y");
   if ((path_a && !a) || (path_x && !x) || (path_y && !y)) {
     free(a);
     free(x);
     free(y);
     return 1;
   }
+  kernel_element *strided_a = path_a ? calloc(capacity, sizeof(*strided_a)) : NULL;
+  kernel_element *strided_x = path_x ? calloc(capacity, sizeof(*strided_x)) : NULL;
+  kernel_element *strided_y = path_y ? calloc(capacity, sizeof(*strided_y)) : NULL;
+  if ((path_a && !strided_a) || (path_x && !strided_x) ||
+      (path_y && !strided_y)) {
+    fprintf(stderr, "allocation failed\n");
+    free(a);
+    free(x);
+    free(y);
+    free(strided_a);
+    free(strided_x);
+    free(strided_y);
+    return 1;
+  }
+  if (path_a)
+    format_input_data((const char *)a, (char *)strided_a, (uint32_t)n,
+                      sizeof(*a), 0, (uint8_t)stride);
+  if (path_x)
+    format_input_data((const char *)x, (char *)strided_x, (uint32_t)n,
+                      sizeof(*x), 0, (uint8_t)stride);
+  if (path_y)
+    format_input_data((const char *)y, (char *)strided_y, (uint32_t)n,
+                      sizeof(*y), 0, (uint8_t)stride);
+  free(a);
+  free(x);
+  free(y);
+  a = strided_a;
+  x = strided_x;
+  y = strided_y;
 #if DEFINE == MEMSET
   size_t a_count = 0;
   struct stat st;
