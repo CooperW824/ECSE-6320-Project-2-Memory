@@ -45,7 +45,7 @@ THREADS=${THREADS:-1,2,4}
 STRIDES=${STRIDES:-1,16,32,64,128}
 PATTERNS=${PATTERNS:-stride,random}
 KERNELS=${KERNELS:-reduction,memset,vector-multiply,scalar-multiply}
-REPEATS=${REPEATS:-1}
+REPEATS=${REPEATS:-5}
 PERF_EVENTS=${PERF_EVENTS:-cycles,instructions,cache-references,cache-misses,dTLB-loads,dTLB-load-misses}
 RESULTS_DIR=${2:-"$ROOT/results/perf/$(date +%Y%m%d-%H%M%S)"}
 
