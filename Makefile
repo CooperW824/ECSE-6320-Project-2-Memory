@@ -4,7 +4,7 @@ CFLAGS ?= -O3 -std=c11 -Wall -Wextra
 LDFLAGS ?=
 LDLIBS ?= -pthread
 
-EXPERIMENT_DIR := Src/experiment
+EXPERIMENT_DIR := src/experiment
 BUILD_DIR ?= build/experiments
 SOURCES := $(EXPERIMENT_DIR)/main.c \
 	$(EXPERIMENT_DIR)/kernels.c \
@@ -27,7 +27,10 @@ EXPERIMENTS := \
 
 FORCE:
 
-all: $(EXPERIMENTS)
+all: $(EXPERIMENTS) build/datagen
+
+build/datagen: src/data-gen/main.c
+	$(CC) ${CFLAGS} $^ -o $@
 
 $(BUILD_DIR):
 	mkdir -p $@
