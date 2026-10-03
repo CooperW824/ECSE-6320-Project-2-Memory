@@ -1,6 +1,5 @@
 #define _POSIX_C_SOURCE 200809L
 #include "inc/kernels.h"
-#include <assert.h>
 #include "inc/perf.h"
 
 #include <errno.h>
@@ -96,16 +95,14 @@ static void *run_worker(void *opaque) {
  *                     start_offset + ((num_elements - 1) * stride + 1) *
  *                     element_size bytes.
  * @param num_elements Number of floats/doubles in `input`.
- * @param element_size Either 4 (float) or 8 (double).
+ * @param element_size Size of an element in bytes.
  * @param start_offset Number of leading bytes in `output` to leave as zero.
  * @param stride       Spacing between successive elements, in units of
- * element_size. Must be 1, 2, 4, or 8
+ *                     element_size.
  */
 void format_input_data(const char *input, char *output, uint32_t num_elements,
-                       uint8_t element_size, uint8_t start_offset,
-                       uint8_t stride) {
-  assert((stride == 1 || stride == 2 || stride == 4 || stride == 8) &&
-         "Stride must be 1, 2, 4, or 8");
+                       size_t element_size, size_t start_offset,
+                       size_t stride) {
   if (num_elements == 0)
     return;
   size_t total_size = start_offset +
@@ -202,7 +199,6 @@ int main(int argc, char **argv) {
     }
   }
   if (!have_n || optind != argc || n == 0 || n > UINT32_MAX || threads > n ||
-      (stride != 1 && stride != 2 && stride != 4 && stride != 8) ||
       n - 1 > (SIZE_MAX - 1) / stride) {
     usage(argv[0]);
     return 2;
@@ -255,13 +251,13 @@ int main(int argc, char **argv) {
   }
   if (path_a)
     format_input_data((const char *)a, (char *)strided_a, (uint32_t)n,
-                      sizeof(*a), 0, (uint8_t)stride);
+                      sizeof(*a), 0, stride);
   if (path_x)
     format_input_data((const char *)x, (char *)strided_x, (uint32_t)n,
-                      sizeof(*x), 0, (uint8_t)stride);
+                      sizeof(*x), 0, stride);
   if (path_y)
     format_input_data((const char *)y, (char *)strided_y, (uint32_t)n,
-                      sizeof(*y), 0, (uint8_t)stride);
+                      sizeof(*y), 0, stride);
   free(a);
   free(x);
   free(y);
