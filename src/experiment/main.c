@@ -276,9 +276,9 @@ int main(int argc, char **argv) {
   }
 
   printf("kernel=%s elements=%zu stride=%zu pattern=%s threads=%zu "
-         "elapsed_ns=%llu",
+         "elapsed_ms=%lf",
          kernel_Name(), n, stride, random_order ? "random" : "stride", threads,
-         (unsigned long long)perf_ComputeNSecDelta(&timer));
+         ((double)perf_ComputeNSecDelta(&timer)) / 1e6);
 #if DEFINE == REDUCTION
   kernel_element total = 0;
   for (size_t i = 0; i < threads; ++i)
