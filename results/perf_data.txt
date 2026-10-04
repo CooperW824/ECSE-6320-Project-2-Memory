@@ -1,0 +1,240 @@
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=7.791398 sum=5992.39844
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.609249 sum=-30.9602337
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.548341 sum=-829.321289
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.112463 sum=3089.75439
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=28.184983 sum=30286.3613
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=4.132357 sum=5992.39453
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=2.435313 sum=5992.58301
+kernel=array-reduction-sum elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=20.830060 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=25.323666 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=25.205513 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=28.717033 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=17.962153 sum=5992.32129
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=7.541301 sum=5992.39844
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.468627 sum=-30.9602337
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.641788 sum=-829.321289
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.908812 sum=3089.75439
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=28.982344 sum=30286.3613
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=4.068883 sum=5992.39453
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=2.956914 sum=5992.58301
+kernel=array-reduction-sum elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=20.275436 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=24.457477 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=26.545112 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=30.436947 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=18.020691 sum=5992.32129
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=7.799669 sum=5992.39844
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.531203 sum=-30.9602337
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.566028 sum=-829.321289
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.948126 sum=3089.75439
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=29.039100 sum=30286.3613
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=4.125297 sum=5992.39453
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=2.617215 sum=5992.58301
+kernel=array-reduction-sum elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=19.327661 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=26.227274 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=23.405700 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=27.151545 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=14.248739 sum=5992.32129
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=7.786495 sum=5992.39844
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.491070 sum=-30.9602337
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.484106 sum=-829.321289
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.888584 sum=3089.75439
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=29.177739 sum=30286.3613
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=4.402960 sum=5992.39453
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=2.456117 sum=5992.58301
+kernel=array-reduction-sum elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=20.332075 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=25.002260 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=29.044142 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=27.153262 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=19.961800 sum=5992.32129
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=7.757740 sum=5992.39844
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.545439 sum=-30.9602337
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.674829 sum=-829.321289
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.949418 sum=3089.75439
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=28.925693 sum=30286.3613
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=4.092084 sum=5992.39453
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=2.635108 sum=5992.58301
+kernel=array-reduction-sum elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=19.590011 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=25.471930 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=23.978725 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=28.213945 sum=5992.39844
+kernel=array-reduction-sum elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=19.903703 sum=5992.32129
+kernel=memset elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=15.769651
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.698633
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.461194
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.612665
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=67.392395
+kernel=memset elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.188358
+kernel=memset elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.112263
+kernel=memset elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=260.373442
+kernel=memset elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=478.363459
+kernel=memset elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=968.462152
+kernel=memset elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1004.196648
+kernel=memset elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=31.354539
+kernel=memset elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=16.062372
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.596584
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.621631
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.570598
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=68.305957
+kernel=memset elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.997977
+kernel=memset elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.147147
+kernel=memset elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=251.801404
+kernel=memset elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=488.939125
+kernel=memset elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=959.234230
+kernel=memset elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=989.456563
+kernel=memset elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=38.336953
+kernel=memset elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=19.267776
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.544838
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.596063
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.509144
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=69.302091
+kernel=memset elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=8.216379
+kernel=memset elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.430342
+kernel=memset elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=247.834411
+kernel=memset elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=227.294471
+kernel=memset elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=453.331805
+kernel=memset elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=968.237653
+kernel=memset elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=38.146948
+kernel=memset elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=17.305997
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.482285
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.504390
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.528066
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=70.899071
+kernel=memset elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.958126
+kernel=memset elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.598537
+kernel=memset elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=251.040183
+kernel=memset elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=519.537248
+kernel=memset elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=993.497714
+kernel=memset elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=986.846126
+kernel=memset elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=36.712382
+kernel=memset elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=16.208597
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.554953
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.603073
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.365893
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=69.553966
+kernel=memset elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=8.574769
+kernel=memset elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.190277
+kernel=memset elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=256.908602
+kernel=memset elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=499.838201
+kernel=memset elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=974.037853
+kernel=memset elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=999.678428
+kernel=memset elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=35.528865
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=21.732162
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.540207
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.691449
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.820603
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=88.276330
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=12.075766
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=12.809824
+kernel=vector-elementwise-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=276.609917
+kernel=vector-elementwise-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=495.224638
+kernel=vector-elementwise-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=973.880867
+kernel=vector-elementwise-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1971.977755
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=83.181044
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=25.702772
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.545938
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.607632
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.793022
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=83.565962
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=10.977479
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=6.719884
+kernel=vector-elementwise-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=303.279191
+kernel=vector-elementwise-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=525.741655
+kernel=vector-elementwise-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=1030.556117
+kernel=vector-elementwise-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1994.132421
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=42.121492
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=9.421762
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.297444
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.640493
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.821050
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=78.108338
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=12.056483
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=6.977889
+kernel=vector-elementwise-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=277.936326
+kernel=vector-elementwise-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=514.791039
+kernel=vector-elementwise-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=1033.998278
+kernel=vector-elementwise-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=2062.014691
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=94.556576
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=24.992042
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.553210
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.639710
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.723548
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=92.268326
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=27.750477
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=6.696986
+kernel=vector-elementwise-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=291.250928
+kernel=vector-elementwise-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=499.507261
+kernel=vector-elementwise-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=1017.772837
+kernel=vector-elementwise-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1925.556349
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=84.219810
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=21.940488
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.428149
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.507226
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.613728
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=81.728096
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=10.357978
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=6.948122
+kernel=vector-elementwise-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=286.532213
+kernel=vector-elementwise-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=503.812386
+kernel=vector-elementwise-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=964.327803
+kernel=vector-elementwise-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1981.949522
+kernel=vector-elementwise-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=83.815315
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=18.730311
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.481508
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.614647
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.750796
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=66.598267
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=12.650318
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.424410
+kernel=scalar-vector-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=257.355841
+kernel=scalar-vector-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=514.749971
+kernel=scalar-vector-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=1017.401855
+kernel=scalar-vector-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1950.727208
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=55.940475
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=18.112107
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.633141
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.681361
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.666008
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=73.612231
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.561487
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.939219
+kernel=scalar-vector-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=262.508292
+kernel=scalar-vector-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=510.386302
+kernel=scalar-vector-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=1022.479447
+kernel=scalar-vector-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1969.445266
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=52.933486
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=17.220274
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.496697
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.476369
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.767877
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=68.539689
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.884820
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.805300
+kernel=scalar-vector-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=262.966586
+kernel=scalar-vector-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=528.044142
+kernel=scalar-vector-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=973.731540
+kernel=scalar-vector-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1912.220785
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=55.987633
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=19.859357
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.524078
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.592946
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=1.802692
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=72.801720
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.869030
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.195672
+kernel=scalar-vector-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=257.761687
+kernel=scalar-vector-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=485.027115
+kernel=scalar-vector-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=1003.885420
+kernel=scalar-vector-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=2004.765315
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=55.860276
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=1 elapsed_ms=21.112284
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.539386
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.544746
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=3.309383
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=71.841378
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=2 elapsed_ms=9.858852
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=stride threads=4 elapsed_ms=5.557328
+kernel=scalar-vector-multiply elements=4194304 stride=16 pattern=stride threads=1 elapsed_ms=258.707623
+kernel=scalar-vector-multiply elements=4194304 stride=32 pattern=stride threads=1 elapsed_ms=503.514172
+kernel=scalar-vector-multiply elements=4194304 stride=64 pattern=stride threads=1 elapsed_ms=966.394191
+kernel=scalar-vector-multiply elements=4194304 stride=128 pattern=stride threads=1 elapsed_ms=1969.854601
+kernel=scalar-vector-multiply elements=4194304 stride=1 pattern=random threads=1 elapsed_ms=50.682994
