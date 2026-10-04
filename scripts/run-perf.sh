@@ -5,7 +5,8 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/run-perf.sh DATA_DIR [RESULTS_DIR]
 
-Runs perf stat for each selected kernel and parameter combination. DATA_DIR
+Runs one-factor-at-a-time perf experiments for each selected kernel. Each
+experiment starts from BASE_* values and varies only one setting. DATA_DIR
 must contain generated *_f32.floatdata files (or *_f64.floatdata when
 ELEMENT_TYPE=double). Build with matching `make ELEMENT_TYPE=...` first.
 Results are written to a timestamped directory by default.
@@ -18,6 +19,7 @@ Optional environment variables (comma-separated lists):
   PATTERNS=stride,random
   KERNELS=reduction,memset,vector-multiply,scalar-multiply
   REPEATS=1
+  BASE_SIZE=4194304 BASE_THREADS=1 BASE_STRIDE=1 BASE_PATTERN=stride
   PERF_EVENTS=cycles,instructions,cache-references,cache-misses,dTLB-loads,dTLB-load-misses
 USAGE
 }
@@ -46,9 +48,24 @@ STRIDES=${STRIDES:-1,16,32,64,128}
 PATTERNS=${PATTERNS:-stride,random}
 KERNELS=${KERNELS:-reduction,memset,vector-multiply,scalar-multiply}
 REPEATS=${REPEATS:-5}
+BASE_SIZE=${BASE_SIZE:-4194304}
+BASE_THREADS=${BASE_THREADS:-1}
+BASE_STRIDE=${BASE_STRIDE:-1}
+BASE_PATTERN=${BASE_PATTERN:-stride}
 PERF_EVENTS=${PERF_EVENTS:-cycles,instructions,cache-references,cache-misses,dTLB-loads,dTLB-load-misses}
 RESULTS_DIR=${2:-"$ROOT/results/perf/$(date +%Y%m%d-%H%M%S)"}
 
+for setting in BASE_SIZE BASE_THREADS BASE_STRIDE; do
+  value=${!setting}
+  if ! [[ $value =~ ^[1-9][0-9]*$ ]]; then
+    printf '%s must be a positive integer\n' "$setting" >&2
+    exit 2
+  fi
+done
+if [[ $BASE_PATTERN != stride && $BASE_PATTERN != random ]]; then
+  printf 'BASE_PATTERN must be stride or random\n' >&2
+  exit 2
+fi
 if ! [[ $REPEATS =~ ^[1-9][0-9]*$ ]]; then
   printf 'REPEATS must be a positive integer\n' >&2
   exit 2
@@ -88,32 +105,43 @@ manifest="$RESULTS_DIR/manifest.csv"
 printf 'kernel,size,threads,stride,pattern,repeat,perf_log\n' > "$manifest"
 run_number=0
 
+run_experiment() {
+  local kernel=$1 size=$2 thread_count=$3 stride=$4 pattern=$5 repeat=$6
+  local binary="$ROOT/build/experiments/$kernel"
+  local args=(--n "$size" --threads "$thread_count" --stride "$stride" --pattern "$pattern")
+  case "$kernel" in
+    reduction|memset) args+=(--a "$DATA_DIR/a_${suffix}.floatdata") ;;
+    vector-multiply) args+=(--x "$DATA_DIR/x_${suffix}.floatdata" --y "$DATA_DIR/y_${suffix}.floatdata") ;;
+    scalar-multiply) args+=(--x "$DATA_DIR/x_${suffix}.floatdata") ;;
+  esac
+  if [[ $kernel == memset ]]; then args+=(--fill "${FILL_VALUE:-1}"); fi
+  if [[ $kernel == scalar-multiply ]]; then args+=(--scalar "${SCALAR_VALUE:-2}"); fi
+  ((run_number+=1))
+  local label log
+  label=$(printf '%04d-%s-n%s-t%s-s%s-%s-r%s' \
+    "$run_number" "$kernel" "$size" "$thread_count" "$stride" "$pattern" "$repeat")
+  log="$RESULTS_DIR/$label.perf.txt"
+  printf '[%s] perf stat -> %s\n' "$label" "$log"
+  perf stat -x, -e "$(IFS=,; printf '%s' "${events[*]}")" -o "$log" -- "$binary" "${args[@]}"
+  printf '%s,%s,%s,%s,%s,%s,%s\n' \
+    "$kernel" "$size" "$thread_count" "$stride" "$pattern" "$repeat" "$label.perf.txt" >> "$manifest"
+}
+
 for kernel in "${kernels[@]}"; do
-  binary="$ROOT/build/experiments/$kernel"
-  for size in "${sizes[@]}"; do
+  for ((repeat=1; repeat<=REPEATS; repeat++)); do
+    # Run the baseline, then vary one parameter at a time.
+    run_experiment "$kernel" "$BASE_SIZE" "$BASE_THREADS" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
+    for size in "${sizes[@]}"; do
+      [[ $size == "$BASE_SIZE" ]] || run_experiment "$kernel" "$size" "$BASE_THREADS" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
+    done
     for thread_count in "${thread_counts[@]}"; do
-      for stride in "${strides[@]}"; do
-        for pattern in "${patterns[@]}"; do
-          for ((repeat=1; repeat<=REPEATS; repeat++)); do
-            ((run_number+=1))
-            args=(--n "$size" --threads "$thread_count" --stride "$stride" --pattern "$pattern")
-            case "$kernel" in
-              reduction|memset) args+=(--a "$DATA_DIR/a_${suffix}.floatdata") ;;
-              vector-multiply) args+=(--x "$DATA_DIR/x_${suffix}.floatdata" --y "$DATA_DIR/y_${suffix}.floatdata") ;;
-              scalar-multiply) args+=(--x "$DATA_DIR/x_${suffix}.floatdata") ;;
-            esac
-            if [[ $kernel == memset ]]; then args+=(--fill "${FILL_VALUE:-1}"); fi
-            if [[ $kernel == scalar-multiply ]]; then args+=(--scalar "${SCALAR_VALUE:-2}"); fi
-            label=$(printf '%04d-%s-n%s-t%s-s%s-%s-r%s' \
-              "$run_number" "$kernel" "$size" "$thread_count" "$stride" "$pattern" "$repeat")
-            log="$RESULTS_DIR/$label.perf.txt"
-            printf '[%s] perf stat -> %s\n' "$label" "$log"
-            perf stat -x, -e "$(IFS=,; printf '%s' "${events[*]}")" -o "$log" -- "$binary" "${args[@]}"
-            printf '%s,%s,%s,%s,%s,%s,%s\n' \
-              "$kernel" "$size" "$thread_count" "$stride" "$pattern" "$repeat" "$label.perf.txt" >> "$manifest"
-          done
-        done
-      done
+      [[ $thread_count == "$BASE_THREADS" ]] || run_experiment "$kernel" "$BASE_SIZE" "$thread_count" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
+    done
+    for stride in "${strides[@]}"; do
+      [[ $stride == "$BASE_STRIDE" ]] || run_experiment "$kernel" "$BASE_SIZE" "$BASE_THREADS" "$stride" "$BASE_PATTERN" "$repeat"
+    done
+    for pattern in "${patterns[@]}"; do
+      [[ $pattern == "$BASE_PATTERN" ]] || run_experiment "$kernel" "$BASE_SIZE" "$BASE_THREADS" "$BASE_STRIDE" "$pattern" "$repeat"
     done
   done
 done
