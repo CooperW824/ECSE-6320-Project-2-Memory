@@ -84,3 +84,19 @@ Input files must cover the largest selected strided range: at least
 `(max(SIZES) - 1) * max(STRIDES) + 1` elements. Thus the default sweep needs
 16,777,201 elements in each input file. Build with `make ELEMENT_TYPE=double`
 when setting `ELEMENT_TYPE=double` for the sweep.
+
+## Intel Memory Latency Checker
+
+With `mlc` available on `PATH`, collect cache-sized idle latency samples,
+stride and random loaded-latency/bandwidth sweeps, read/write mix sweeps, and
+peak injection bandwidth with:
+
+```sh
+scripts/run-mlc.sh
+```
+
+Raw MLC output and a `manifest.tsv` are saved under
+`results/mlc/<timestamp>/` by default. Pass an output directory as the first
+argument to choose another location. The cache working-set sizes and measurement
+duration can be adjusted with `CACHE_L1_KB`, `CACHE_L2_KB`, `CACHE_LLC_KB`, and
+`MLC_SECONDS`; see `scripts/run-mlc.sh --help` for all options.
