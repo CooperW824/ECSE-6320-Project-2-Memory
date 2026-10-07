@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Plot cache and TLB miss counts from the small-page perf results."""
+"""Plot cache miss and page-walk rates from the benchmark log."""
 
 from __future__ import annotations
 
 import argparse
-import csv
 import re
 import statistics
 from collections import defaultdict
@@ -15,178 +14,154 @@ import matplotlib.pyplot as plt
 
 
 WORKING_SET_SIZE = 4_194_304
-METRICS = ("cache-misses", "dTLB-load-misses")
-KERNELS = ("reduction", "memset", "vector-multiply", "scalar-multiply")
-FILENAME_PATTERN = re.compile(
-    r"\d+-(?P<kernel>.+?)-n(?P<n>\d+)-t(?P<threads>\d+)"
-    r"-s(?P<stride>\d+)-(?P<pattern>stride|random)-r(?P<repeat>\d+)\.perf\.txt$"
+CACHE_METRICS = (
+    ("l1_load_miss_rate", "L1 load miss rate"),
+    ("l2_miss_rate", "L2 miss rate"),
+    ("llc_miss_rate", "LLC miss rate"),
 )
+PAGE_WALK_METRIC = ("dtlb_page_walk_rate", "DTLB page-walk rate")
+FIELD_PATTERN = re.compile(r"([A-Za-z_][A-Za-z_0-9]*)=([^\s]+)")
 
 
 @dataclass(frozen=True)
-class PerfResult:
+class Result:
     kernel: str
-    working_set_size: int
-    threads: int
+    elements: int
     stride: int
     pattern: str
-    repeat: int
-    metrics: dict[str, int]
+    threads: int
+    metrics: dict[str, float]
 
 
-def parse_perf_file(path: Path) -> PerfResult | None:
-    """Extract the run parameters from the filename and event counts from perf CSV."""
-    match = FILENAME_PATTERN.match(path.name)
-    if match is None:
+def parse_log_line(line: str) -> Result | None:
+    """Parse one whitespace-separated key=value record from the benchmark log."""
+    fields = dict(FIELD_PATTERN.findall(line))
+    required = ("kernel", "elements", "stride", "pattern", "threads")
+    if not all(key in fields for key in required):
         return None
 
-    parameters = match.groupdict()
-    metrics: dict[str, int] = {}
-    with path.open(newline="", encoding="utf-8") as perf_file:
-        for row in csv.reader(perf_file):
-            if len(row) < 4:
-                continue
-            event = row[2].split(":", maxsplit=1)[0].strip()
-            if event not in METRICS:
-                continue
-            try:
-                metrics[event] = int(row[3].strip().replace(",", ""))
-            except ValueError:
-                # Ignore events that perf did not count (for example, "<not counted>").
-                continue
+    metrics: dict[str, float] = {}
+    for key in (*[metric for metric, _ in CACHE_METRICS], PAGE_WALK_METRIC[0]):
+        value = fields.get(key)
+        if value is None or value == "NA":
+            continue
+        try:
+            metrics[key] = float(value.rstrip("%"))
+        except ValueError:
+            continue
 
-    return PerfResult(
-        kernel=parameters["kernel"],
-        working_set_size=int(parameters["n"]),
-        threads=int(parameters["threads"]),
-        stride=int(parameters["stride"]),
-        pattern=parameters["pattern"],
-        repeat=int(parameters["repeat"]),
+    return Result(
+        kernel=fields["kernel"],
+        elements=int(fields["elements"]),
+        stride=int(fields["stride"]),
+        pattern=fields["pattern"],
+        threads=int(fields["threads"]),
         metrics=metrics,
     )
 
 
-def load_results(results_dir: Path) -> list[PerfResult]:
-    results = [
-        result
-        for path in sorted(results_dir.glob("*.perf.txt"))
-        if (result := parse_perf_file(path)) is not None
-    ]
+def load_results(log_path: Path) -> list[Result]:
+    with log_path.open(encoding="utf-8") as log_file:
+        results = [
+            result
+            for line in log_file
+            if (result := parse_log_line(line)) is not None
+        ]
     if not results:
-        raise SystemExit(f"No matching perf result files found in {results_dir}")
+        raise SystemExit(f"No valid benchmark records found in {log_path}")
     return results
 
 
-def median_by_key(results: list[PerfResult], key_fn, metric: str) -> dict:
-    values: dict[object, list[int]] = defaultdict(list)
+def median_by_key(results: list[Result], key_fn, metric: str) -> dict:
+    values: dict[object, list[float]] = defaultdict(list)
     for result in results:
         if metric in result.metrics:
             values[key_fn(result)].append(result.metrics[metric])
-    return {key: statistics.median(counts) for key, counts in values.items()}
+    return {key: statistics.median(samples) for key, samples in values.items()}
 
 
-def plot_misses_by_working_set(
-    results: list[PerfResult], metric: str, output_path: Path
+def kernels_in(results: list[Result]) -> list[str]:
+    return sorted({result.kernel for result in results})
+
+
+def plot_by_working_set(
+    results: list[Result], metrics: tuple[tuple[str, str], ...], output_path: Path
 ) -> None:
     comparable = [
         result
         for result in results
-        if result.threads == 1
-        and result.stride == 1
-        and result.pattern == "stride"
+        if result.threads == 1 and result.stride == 1 and result.pattern == "stride"
     ]
-    fig, ax = plt.subplots(figsize=(9, 6))
+    kernels = kernels_in(comparable)
+    fig, axes = plt.subplots(1, len(metrics), figsize=(6 * len(metrics), 5), squeeze=False)
 
-    for kernel in KERNELS:
-        medians = median_by_key(
-            [result for result in comparable if result.kernel == kernel],
-            lambda result: result.working_set_size,
-            metric,
-        )
-        sizes = sorted(size for size, count in medians.items() if count > 0)
-        if sizes:
-            ax.plot(
-                sizes,
-                [medians[size] for size in sizes],
-                marker="o",
-                linewidth=2,
-                label=kernel.replace("-", " ").title(),
-            )
+    for ax, (metric, title) in zip(axes[0], metrics):
+        for kernel in kernels:
+            selected = [result for result in comparable if result.kernel == kernel]
+            medians = median_by_key(selected, lambda result: result.elements, metric)
+            sizes = sorted(medians)
+            if sizes:
+                ax.plot(sizes, [medians[size] for size in sizes], marker="o", label=kernel)
+        ax.set_xscale("log")
+        ax.set_xlabel("Working-set size (elements)")
+        ax.set_ylabel("Miss rate (%)")
+        ax.set_title(title)
+        ax.grid(True, which="both", linestyle="--", alpha=0.35)
+        ax.legend(fontsize="small")
 
-    ax.set_xscale("log")
-    ax.set_yscale("log")
-    ax.set_xlabel("Working-set size (elements)")
-    ax.set_ylabel("Median misses")
-    ax.set_title(f"{metric.replace('-', ' ').title()} vs. Working-Set Size")
-    ax.grid(True, which="both", linestyle="--", alpha=0.35)
-    ax.legend(title="Kernel")
+    fig.suptitle("Cache Miss Rate vs. Working-Set Size")
     fig.tight_layout()
     fig.savefig(output_path, dpi=160, bbox_inches="tight")
     plt.close(fig)
 
 
-def access_configurations(results: list[PerfResult]) -> list[tuple[str, int]]:
-    configs = {
-        (result.pattern, result.stride)
-        for result in results
-        if result.working_set_size == WORKING_SET_SIZE and result.threads == 1
-    }
-    return sorted(
-        configs,
-        key=lambda config: (config[0] == "random", config[1]),
-    )
-
-
-def plot_misses_by_access_pattern(
-    results: list[PerfResult], metric: str, output_path: Path
+def plot_by_access_pattern(
+    results: list[Result], metrics: tuple[tuple[str, str], ...], output_path: Path
 ) -> None:
     comparable = [
         result
         for result in results
-        if result.working_set_size == WORKING_SET_SIZE and result.threads == 1
+        if result.elements == WORKING_SET_SIZE and result.threads == 1
     ]
-    configurations = access_configurations(comparable)
+    configurations = sorted(
+        {(result.pattern, result.stride) for result in comparable},
+        key=lambda item: (item[0] == "random", item[1]),
+    )
     if not configurations:
-        raise SystemExit(
-            f"No single-thread results found for n={WORKING_SET_SIZE:,}"
+        raise SystemExit(f"No single-thread results found for n={WORKING_SET_SIZE:,}")
+
+    kernels = kernels_in(comparable)
+    fig, axes = plt.subplots(1, len(metrics), figsize=(6 * len(metrics), 5), squeeze=False)
+    positions = list(range(len(configurations)))
+    labels = ["Random" if pattern == "random" else f"Stride {stride}" for pattern, stride in configurations]
+
+    for ax, (metric, title) in zip(axes[0], metrics):
+        medians = median_by_key(
+            comparable,
+            lambda result: (result.kernel, result.pattern, result.stride),
+            metric,
         )
+        bar_width = 0.8 / max(len(kernels), 1)
+        for kernel_index, kernel in enumerate(kernels):
+            offset = (kernel_index - (len(kernels) - 1) / 2) * bar_width
+            values = [
+                medians.get((kernel, pattern, stride), 0.0)
+                for pattern, stride in configurations
+            ]
+            ax.bar(
+                [position + offset for position in positions],
+                values,
+                width=bar_width,
+                label=kernel,
+            )
+        ax.set_xticks(positions, labels, rotation=35, ha="right")
+        ax.set_xlabel("Stride / access pattern")
+        ax.set_ylabel("Rate (%)")
+        ax.set_title(title)
+        ax.grid(True, axis="y", linestyle="--", alpha=0.35)
+        ax.legend(fontsize="small")
 
-    medians = median_by_key(
-        comparable,
-        lambda result: (result.kernel, result.pattern, result.stride),
-        metric,
-    )
-    labels = [
-        f"Random" if pattern == "random" else f"Stride {stride}"
-        for pattern, stride in configurations
-    ]
-    x_positions = list(range(len(configurations)))
-    bar_width = 0.19
-    fig, ax = plt.subplots(figsize=(12, 6.5))
-
-    for kernel_index, kernel in enumerate(KERNELS):
-        offset = (kernel_index - (len(KERNELS) - 1) / 2) * bar_width
-        values = [
-            medians.get((kernel, pattern, stride), 0)
-            for pattern, stride in configurations
-        ]
-        ax.bar(
-            [position + offset for position in x_positions],
-            values,
-            width=bar_width,
-            label=kernel.replace("-", " ").title(),
-        )
-
-    ax.set_xticks(x_positions, labels)
-    ax.set_xlabel("Access pattern")
-    ax.set_ylabel("Median misses")
-    ax.set_title(
-        f"{metric.replace('-', ' ').title()} by Stride / Pattern "
-        f"(n={WORKING_SET_SIZE:,} elements)"
-    )
-    ax.grid(True, axis="y", linestyle="--", alpha=0.35)
-    ax.set_axisbelow(True)
-    ax.legend(title="Kernel", ncols=2)
+    fig.suptitle(f"Cache Miss Rate by Access Pattern (n={WORKING_SET_SIZE:,})")
     fig.tight_layout()
     fig.savefig(output_path, dpi=160, bbox_inches="tight")
     plt.close(fig)
@@ -195,13 +170,13 @@ def plot_misses_by_access_pattern(
 def main() -> None:
     repository_dir = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(
-        description="Generate cache/TLB miss charts from perf result files."
+        description="Generate cache miss-rate and page-walk-rate charts."
     )
     parser.add_argument(
-        "--results-dir",
+        "--results-file",
         type=Path,
-        default=repository_dir / "results_small_pages",
-        help="Directory containing *.perf.txt files (default: %(default)s)",
+        default=repository_dir / "results" / "small-pages.log",
+        help="Benchmark log file (default: %(default)s)",
     )
     parser.add_argument(
         "--output-dir",
@@ -211,17 +186,17 @@ def main() -> None:
     )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    results = load_results(args.results_file)
 
-    results = load_results(args.results_dir)
     charts = (
-        ("cache-misses", "cache_misses_vs_working_set_size.png", plot_misses_by_working_set),
-        ("dTLB-load-misses", "tlb_misses_vs_working_set_size.png", plot_misses_by_working_set),
-        ("cache-misses", "cache_misses_by_stride_and_pattern.png", plot_misses_by_access_pattern),
-        ("dTLB-load-misses", "tlb_misses_by_stride_and_pattern.png", plot_misses_by_access_pattern),
+        ("cache_miss_rate_vs_working_set_size.png", CACHE_METRICS, plot_by_working_set),
+        ("cache_miss_rate_by_access_pattern.png", CACHE_METRICS, plot_by_access_pattern),
+        ("page_walk_rate_vs_working_set_size.png", (PAGE_WALK_METRIC,), plot_by_working_set),
+        ("page_walk_rate_by_access_pattern.png", (PAGE_WALK_METRIC,), plot_by_access_pattern),
     )
-    for metric, filename, plot_function in charts:
+    for filename, metrics, plot_function in charts:
         output_path = args.output_dir / filename
-        plot_function(results, metric, output_path)
+        plot_function(results, metrics, output_path)
         print(f"Wrote {output_path}")
 
 
