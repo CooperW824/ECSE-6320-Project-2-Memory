@@ -1,8 +1,0 @@
-# started on Sun Oct  4 18:25:07 2026
-
-0,,cycles:u,884137555,66.00,,
-0,,instructions:u,883819740,66.00,,
-0,,cache-references:u,884064216,66.00,,
-0,,cache-misses:u,883802961,66.00,,
-0,,dTLB-loads:u,884066469,66.00,,
-0,,dTLB-load-misses:u,884645539,66.00,,

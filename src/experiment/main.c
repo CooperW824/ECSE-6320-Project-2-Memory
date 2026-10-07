@@ -269,7 +269,7 @@ int main(int argc, char **argv) {
   struct stat st;
   if (stat(path_a, &st) == 0)
     a_count = (size_t)st.st_size / sizeof(kernel_element);
-  kernel_element *output = calloc(a_count, sizeof(*output));
+  kernel_element *output = calloc(capacity, sizeof(*output));
 #else
   kernel_element *output = calloc(capacity, sizeof(*output));
 #endif
