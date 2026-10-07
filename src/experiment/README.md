@@ -19,7 +19,9 @@ Supported `DEFINE` values are `REDUCTION`, `MEMSET`, `VECTOR_MULTIPLY`, and
 `-DELEMENT_TYPE_DOUBLE` to build for `double` inputs (the matching generator
 files are `*_f64.floatdata`).
 
-The runner accepts `--n ELEMENTS`, `--threads N`, `--stride N`, and
+The runner requires `--profile cache|tlb` to select the counters for each run.
+Cache mode initializes L1/L2/LLC counters; TLB mode initializes only DTLB
+counters. The runner also accepts `--n ELEMENTS`, `--threads N`, `--stride N`, and
 `--pattern stride|random`. The working set is `n` logical elements; for stride
 `s`, the accessed file indices range through `(n - 1) * s`. Input files must
 contain at least that many elements. Random mode shuffles the selected strided
@@ -29,9 +31,9 @@ output position is written by only one worker.
 Provide input paths for the selected kernel:
 
 ```sh
-./experiment --a data/a_f32.floatdata --n 1048576 --threads 8
-./experiment --x data/x_f32.floatdata --y data/y_f32.floatdata --n 1048576 \
-  --stride 4 --pattern random --threads 8 --seed 17
+./experiment --profile cache --a data/a_f32.floatdata --n 1048576 --threads 8
+./experiment --profile tlb --x data/x_f32.floatdata --y data/y_f32.floatdata \
+  --n 1048576 --stride 4 --pattern random --threads 8 --seed 17
 ```
 
 Reduction requires `--a`; memset also takes `--a` to establish the available
@@ -39,8 +41,20 @@ array size and writes to a separate in-memory output buffer. Vector
 multiplication requires `--x` and `--y`; scalar-vector multiplication
 requires `--x`. `--fill VALUE` configures memset (default `0`) and
 `--scalar VALUE` configures scalar-vector multiplication (default `1`). Both
-are parsed as runtime options. The runner reports elapsed nanoseconds, selected
+are parsed as runtime options. The runner reports elapsed milliseconds, selected
 parameters, and the reduction sum when applicable.
+
+The runner also reports L1 load, L2, LLC, and DTLB miss rates as percentages.
+Hardware counters are enabled around each worker's kernel call only, then
+aggregated across workers; input loading, formatting, and thread creation are
+outside those counter intervals. `NA` means the event is unsupported, denied,
+or did not run on the current CPU. Linux has no generic L2 event in
+`perf_event.h`; the L2 rate uses the AMD Family 1Ah Model 60h event encodings
+for the Ryzen AI 7 350 and is `NA` on other CPUs. L1 reports load misses only;
+the L1 load miss rate is `NA` for memset, which has no data loads. The DTLB rate uses one
+generic DTLB access/miss event pair; write-specific DTLB encodings are omitted
+because they are not consistently supported. Generic cache/TLB events are
+CPU-dependent, and may require a permissive `perf_event_paranoid` setting.
 
 Generate input files with the project utility, for example:
 
@@ -58,11 +72,15 @@ from the repository root:
 scripts/run-perf.sh data
 ```
 
-By default, it sweeps both access patterns, strides 1 and 16, working sets of
+By default, it sweeps both cache and TLB profiles, both access patterns,
+strides 1 and 16, working sets of
 65,536 and 1,048,576 elements, thread counts 1/2/4, and all four kernels. Each
 run has a separate `perf` output file and is indexed in `manifest.csv` under
 `results/perf/<timestamp>/`. The sweep dimensions, event list, repeat count,
-and data precision can be changed through the environment; see
+and data precision can be changed through the environment; set `PROFILES=cache`
+or `PROFILES=tlb` to run only one profile. The wrapper's default `perf stat`
+event is software `task-clock` to avoid competing with the runner's hardware
+counters; `PERF_EVENTS` can override it. See
 `scripts/run-perf.sh --help` for the variables and defaults. For example:
 
 ```sh

@@ -18,9 +18,10 @@ Optional environment variables (comma-separated lists):
   STRIDES=1,16
   PATTERNS=stride,random
   KERNELS=reduction,memset,vector-multiply,scalar-multiply
+  PROFILES=cache,tlb
   REPEATS=1
   BASE_SIZE=4194304 BASE_THREADS=1 BASE_STRIDE=1 BASE_PATTERN=stride
-  PERF_EVENTS=cycles,instructions,cache-references,cache-misses,dTLB-loads,dTLB-load-misses
+  PERF_EVENTS=task-clock (software-only default to avoid PMU contention)
 USAGE
 }
 
@@ -52,7 +53,8 @@ BASE_SIZE=${BASE_SIZE:-4194304}
 BASE_THREADS=${BASE_THREADS:-1}
 BASE_STRIDE=${BASE_STRIDE:-1}
 BASE_PATTERN=${BASE_PATTERN:-stride}
-PERF_EVENTS=${PERF_EVENTS:-cycles,instructions,cache-references,cache-misses,dTLB-loads,dTLB-load-misses}
+PERF_EVENTS=${PERF_EVENTS:-task-clock}
+PROFILES=${PROFILES:-cache,tlb}
 RESULTS_DIR=${2:-"$ROOT/results/perf/$(date +%Y%m%d-%H%M%S)"}
 
 for setting in BASE_SIZE BASE_THREADS BASE_STRIDE; do
@@ -77,8 +79,15 @@ IFS=, read -r -a thread_counts <<< "$THREADS"
 IFS=, read -r -a strides <<< "$STRIDES"
 IFS=, read -r -a patterns <<< "$PATTERNS"
 IFS=, read -r -a kernels <<< "$KERNELS"
+IFS=, read -r -a profiles <<< "$PROFILES"
 IFS=, read -r -a events <<< "$PERF_EVENTS"
 
+for profile in "${profiles[@]}"; do
+  case "$profile" in
+    cache|tlb) ;;
+    *) printf 'Unknown profile: %s (expected cache or tlb)\n' "$profile" >&2; exit 2 ;;
+  esac
+done
 for kernel in "${kernels[@]}"; do
   case "$kernel" in
     reduction|memset|vector-multiply|scalar-multiply) ;;
@@ -99,16 +108,10 @@ for name in a x y; do
   fi
 done
 
-mkdir -p -- "$RESULTS_DIR"
-RESULTS_DIR=$(cd -- "$RESULTS_DIR" && pwd)
-manifest="$RESULTS_DIR/manifest.csv"
-printf 'kernel,size,threads,stride,pattern,repeat,perf_log\n' > "$manifest"
-run_number=0
-
 run_experiment() {
-  local kernel=$1 size=$2 thread_count=$3 stride=$4 pattern=$5 repeat=$6
+  local kernel=$1 profile=$2 size=$3 thread_count=$4 stride=$5 pattern=$6 repeat=$7
   local binary="$ROOT/build/experiments/$kernel"
-  local args=(--n "$size" --threads "$thread_count" --stride "$stride" --pattern "$pattern")
+  local args=(--profile "$profile" --n "$size" --threads "$thread_count" --stride "$stride" --pattern "$pattern")
   case "$kernel" in
     reduction|memset) args+=(--a "$DATA_DIR/a_${suffix}.floatdata") ;;
     vector-multiply) args+=(--x "$DATA_DIR/x_${suffix}.floatdata" --y "$DATA_DIR/y_${suffix}.floatdata") ;;
@@ -116,34 +119,28 @@ run_experiment() {
   esac
   if [[ $kernel == memset ]]; then args+=(--fill "${FILL_VALUE:-1}"); fi
   if [[ $kernel == scalar-multiply ]]; then args+=(--scalar "${SCALAR_VALUE:-2}"); fi
-  ((run_number+=1))
-  local label log
-  label=$(printf '%04d-%s-n%s-t%s-s%s-%s-r%s' \
-    "$run_number" "$kernel" "$size" "$thread_count" "$stride" "$pattern" "$repeat")
-  log="$RESULTS_DIR/$label.perf.txt"
-  printf '[%s] perf stat -> %s\n' "$label" "$log"
-  perf stat -x, -e "$(IFS=,; printf '%s' "${events[*]}")" -o "$log" -- "$binary" "${args[@]}"
-  printf '%s,%s,%s,%s,%s,%s,%s\n' \
-    "$kernel" "$size" "$thread_count" "$stride" "$pattern" "$repeat" "$label.perf.txt" >> "$manifest"
+  $binary "${args[@]}"
+  
 }
 
 for kernel in "${kernels[@]}"; do
-  for ((repeat=1; repeat<=REPEATS; repeat++)); do
-    # Run the baseline, then vary one parameter at a time.
-    run_experiment "$kernel" "$BASE_SIZE" "$BASE_THREADS" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
-    for size in "${sizes[@]}"; do
-      [[ $size == "$BASE_SIZE" ]] || run_experiment "$kernel" "$size" "$BASE_THREADS" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
-    done
-    for thread_count in "${thread_counts[@]}"; do
-      [[ $thread_count == "$BASE_THREADS" ]] || run_experiment "$kernel" "$BASE_SIZE" "$thread_count" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
-    done
-    for stride in "${strides[@]}"; do
-      [[ $stride == "$BASE_STRIDE" ]] || run_experiment "$kernel" "$BASE_SIZE" "$BASE_THREADS" "$stride" "$BASE_PATTERN" "$repeat"
-    done
-    for pattern in "${patterns[@]}"; do
-      [[ $pattern == "$BASE_PATTERN" ]] || run_experiment "$kernel" "$BASE_SIZE" "$BASE_THREADS" "$BASE_STRIDE" "$pattern" "$repeat"
+  for profile in "${profiles[@]}"; do
+    for ((repeat=1; repeat<=REPEATS; repeat++)); do
+      # Run the baseline, then vary one parameter at a time.
+      run_experiment "$kernel" "$profile" "$BASE_SIZE" "$BASE_THREADS" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
+      for size in "${sizes[@]}"; do
+        [[ $size == "$BASE_SIZE" ]] || run_experiment "$kernel" "$profile" "$size" "$BASE_THREADS" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
+      done
+      for thread_count in "${thread_counts[@]}"; do
+        [[ $thread_count == "$BASE_THREADS" ]] || run_experiment "$kernel" "$profile" "$BASE_SIZE" "$thread_count" "$BASE_STRIDE" "$BASE_PATTERN" "$repeat"
+      done
+      for stride in "${strides[@]}"; do
+        [[ $stride == "$BASE_STRIDE" ]] || run_experiment "$kernel" "$profile" "$BASE_SIZE" "$BASE_THREADS" "$stride" "$BASE_PATTERN" "$repeat"
+      done
+      for pattern in "${patterns[@]}"; do
+        [[ $pattern == "$BASE_PATTERN" ]] || run_experiment "$kernel" "$profile" "$BASE_SIZE" "$BASE_THREADS" "$BASE_STRIDE" "$pattern" "$repeat"
+      done
     done
   done
 done
 
-printf 'Completed %s runs. Manifest: %s\n' "$run_number" "$manifest"
