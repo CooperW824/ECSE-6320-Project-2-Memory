@@ -100,7 +100,24 @@ static int open_amd_zen5_l2_event(uint64_t config, int group_fd) {
   return perf_event_open_for_thread(&attr, group_fd);
 }
 
-static int has_amd_zen5_l2_events(void) {
+/* AMD Family 1Ah Model 60h events: 0x45/0xf0 counts L1 DTLB misses that also
+ * miss the L2 DTLB (page walks requested); 0x29/0x01 counts dispatched loads. */
+static int open_amd_zen5_tlb_event(uint64_t config) {
+  struct perf_event_attr attr;
+  memset(&attr, 0, sizeof(attr));
+  attr.type = PERF_TYPE_RAW;
+  attr.size = sizeof(attr);
+  attr.config = config;
+  attr.disabled = 1;
+  attr.pinned = 1;
+  attr.exclude_kernel = 1;
+  attr.exclude_hv = 1;
+  attr.read_format = PERF_FORMAT_TOTAL_TIME_ENABLED |
+                     PERF_FORMAT_TOTAL_TIME_RUNNING;
+  return perf_event_open_for_thread(&attr, -1);
+}
+
+static int has_amd_zen5_raw_events(void) {
 #if defined(__i386__) || defined(__x86_64__)
   unsigned int eax, ebx, ecx, edx;
   if (__get_cpuid(0, &eax, &ebx, &ecx, &edx) == 0)
@@ -162,11 +179,18 @@ static void open_worker_counters(worker_arg *arg) {
           !metric_uses_operation(metric, operation))
         continue;
       if (metric == PERF_L2) {
-        if (has_amd_zen5_l2_events()) {
+        if (has_amd_zen5_raw_events()) {
           pair->access_fd = open_amd_zen5_l2_event(UINT64_C(0xf864), -1);
           if (pair->access_fd >= 0)
             pair->miss_fd = open_amd_zen5_l2_event(UINT64_C(0xf064), -1);
           pair->second_event_is_hit_count = 1;
+        }
+      } else if (metric == PERF_TLB) {
+        if (has_amd_zen5_raw_events()) {
+          /* access_fd is dispatched loads; miss_fd is page walks. */
+          pair->access_fd = open_amd_zen5_tlb_event(UINT64_C(0x0129));
+          if (pair->access_fd >= 0)
+            pair->miss_fd = open_amd_zen5_tlb_event(UINT64_C(0xf045));
         }
       } else if (metric == PERF_LLC) {
         pair->access_fd = open_hardware_event(PERF_COUNT_HW_CACHE_REFERENCES, -1);
@@ -649,7 +673,7 @@ int main(int argc, char **argv) {
     print_miss_rate("l2_miss_rate", args, threads, profile_mode, PERF_L2);
     print_miss_rate("llc_miss_rate", args, threads, profile_mode, PERF_LLC);
   } else {
-    print_miss_rate("tlb_miss_rate", args, threads, profile_mode, PERF_TLB);
+    print_miss_rate("dtlb_page_walk_rate", args, threads, profile_mode, PERF_TLB);
   }
   putchar('\n');
   free(a);

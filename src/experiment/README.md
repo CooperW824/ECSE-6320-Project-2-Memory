@@ -44,17 +44,19 @@ requires `--x`. `--fill VALUE` configures memset (default `0`) and
 are parsed as runtime options. The runner reports elapsed milliseconds, selected
 parameters, and the reduction sum when applicable.
 
-The runner also reports L1 load, L2, LLC, and DTLB miss rates as percentages.
+The runner also reports L1 load, L2, and LLC miss rates in cache mode. TLB
+mode reports page walks per dispatched load as a percentage.
 Hardware counters are enabled around each worker's kernel call only, then
 aggregated across workers; input loading, formatting, and thread creation are
 outside those counter intervals. `NA` means the event is unsupported, denied,
 or did not run on the current CPU. Linux has no generic L2 event in
 `perf_event.h`; the L2 rate uses the AMD Family 1Ah Model 60h event encodings
 for the Ryzen AI 7 350 and is `NA` on other CPUs. L1 reports load misses only;
-the L1 load miss rate is `NA` for memset, which has no data loads. The DTLB rate uses one
-generic DTLB access/miss event pair; write-specific DTLB encodings are omitted
-because they are not consistently supported. Generic cache/TLB events are
-CPU-dependent, and may require a permissive `perf_event_paranoid` setting.
+the L1 load miss rate is `NA` for memset, which has no data loads. On the AMD
+Family 1Ah Model 60h CPU, the TLB profile divides page walks (L1 and L2 DTLB
+misses) by dispatched loads; it uses CPU-specific raw events and is `NA` on
+other CPUs. Generic cache events are CPU-dependent and may require a permissive
+`perf_event_paranoid` setting.
 
 Generate input files with the project utility, for example:
 

@@ -45,8 +45,9 @@ are parsed as runtime options. The runner reports elapsed milliseconds, selected
 parameters, and the reduction sum when applicable.
 
 Cache mode reports L1 load, L2, and LLC miss rates; its L1 load rate is `NA`
-for memset because that kernel performs no loads. TLB mode reports the DTLB
-miss rate.
+for memset because that kernel performs no loads. TLB mode reports page walks
+per dispatched load. On AMD Family 1Ah Model 60h CPUs this uses the raw L1/L2
+DTLB page-walk and load-dispatch events; it is `NA` on other CPUs.
 
 Generate input files with the project utility, for example:
 
