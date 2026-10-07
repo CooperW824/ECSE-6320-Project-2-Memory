@@ -1,0 +1,14 @@
+label	file	command
+idle-latency-l1-32kib	idle-latency-l1-32kib.txt	mlc --idle_latency -r -b32 -t2 
+idle-latency-l2-256kib	idle-latency-l2-256kib.txt	mlc --idle_latency -r -b256 -t2 
+idle-latency-llc-8192kib	idle-latency-llc-8192kib.txt	mlc --idle_latency -r -b8192 -t2 
+loaded-latency-stride-64b	loaded-latency-stride-64b.txt	mlc --loaded_latency -l64 -b100000 -t2 
+loaded-latency-stride-256b	loaded-latency-stride-256b.txt	mlc --loaded_latency -l256 -b100000 -t2 
+loaded-latency-stride-512b	loaded-latency-stride-512b.txt	mlc --loaded_latency -l512 -b100000 -t2 
+loaded-latency-stride-1024b	loaded-latency-stride-1024b.txt	mlc --loaded_latency -l1024 -b100000 -t2 
+loaded-latency-random	loaded-latency-random.txt	mlc --loaded_latency -r -U -b100000 -t2 
+loaded-latency-mix-100read	loaded-latency-mix-100read.txt	mlc --loaded_latency -R -l64 -b100000 -t2 
+loaded-latency-mix-66read-33write	loaded-latency-mix-66read-33write.txt	mlc --loaded_latency -W2 -l64 -b100000 -t2 
+loaded-latency-mix-50read-50write	loaded-latency-mix-50read-50write.txt	mlc --loaded_latency -W5 -l64 -b100000 -t2 
+loaded-latency-mix-100write	loaded-latency-mix-100write.txt	mlc --loaded_latency -W6 -l64 -b100000 -t2 
+peak-bandwidth-ratios	peak-bandwidth-ratios.txt	mlc --peak_injection_bandwidth -b100000 -t2 

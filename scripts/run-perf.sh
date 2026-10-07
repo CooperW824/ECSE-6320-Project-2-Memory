@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   cat <<'USAGE'
-Usage: scripts/run-perf.sh DATA_DIR [RESULTS_DIR]
+Usage: scripts/run-perf.sh DATA_DIR
 
 Runs one-factor-at-a-time perf experiments for each selected kernel. Each
 experiment starts from BASE_* values and varies only one setting. DATA_DIR
