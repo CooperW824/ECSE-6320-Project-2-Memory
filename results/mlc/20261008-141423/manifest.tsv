@@ -1,0 +1,2 @@
+label	file	command
+idle-latency-l1-32kib	idle-latency-l1-32kib.txt	mlc --idle_latency -r -b32 -t2 

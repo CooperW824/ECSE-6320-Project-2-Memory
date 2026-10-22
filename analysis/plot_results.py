@@ -175,7 +175,7 @@ def main() -> None:
     parser.add_argument(
         "--results-file",
         type=Path,
-        default=repository_dir / "results" / "small-pages.log",
+        default=repository_dir / "results" / "small-pages.txt",
         help="Benchmark log file (default: %(default)s)",
     )
     parser.add_argument(

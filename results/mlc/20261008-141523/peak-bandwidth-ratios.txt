@@ -9,9 +9,9 @@ Measuring Peak Injection Memory Bandwidths for the system
 Bandwidths are in MB/sec (1 MB/sec = 1,000,000 Bytes/sec)
 Using all the threads from each core if Hyper-threading is enabled
 Using traffic with the following read-write ratios
-ALL Reads        :	 60259.7	
-3:1 Reads-Writes :	 64792.3	
-2:1 Reads-Writes :	 62485.3	
-1:1 Reads-Writes :	 61347.4	
-Stream-triad like:	 65432.6	
+ALL Reads        :	 61387.1	
+3:1 Reads-Writes :	 64914.2	
+2:1 Reads-Writes :	 62436.4	
+1:1 Reads-Writes :	 62245.8	
+Stream-triad like:	 65864.6	
 

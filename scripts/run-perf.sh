@@ -29,7 +29,7 @@ if [[ ${1:-} == -h || ${1:-} == --help ]]; then
   usage
   exit 0
 fi
-if (($# < 1 || $# > 2)); then
+if [[ $# -ne 1 ]]; then
   usage >&2
   exit 2
 fi
