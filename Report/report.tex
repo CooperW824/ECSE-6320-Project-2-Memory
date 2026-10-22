@@ -121,8 +121,9 @@ To do this I will use 4 different computational kernels:
 \end{enumerate}
 
 To change the other experimental variables, I have a main kernel runner that can control the working set size, the
-stride of the data, run with random access patterns, number of threads accessing the data. To be able to control the
-page size, I will be running this code in a Linux VM where I can set the memory page size to either 4KiB or 2MiB.
+stride of the data, run with random access patterns, number of threads accessing the data. I will not be able to
+control page size since page size is set at boot, to adjust the page size for my OS would require me to change the
+bootloader configuration which I was not comfortable doing on my everyday laptop.
 
 I also make use of Intel Memory Latency Checker (MLC) to determine latency and bandwidth at different read write
 ratios, access patterns, and memory queue depths.
@@ -376,6 +377,10 @@ writes to complete. I am not certain of this though.
 
 I think the thing that surprised me the most was the latency figures for L1, L2, L3, and DRAM latency at idle and 0
 queue depth. I didn't realize that even L3 cache was up to 10x faster than a DRAM fetch.
+
+I was not be able to control the memory page size since page size is set at boot, to adjust the page size for my OS
+would require me to change the bootloader configuration which I was not comfortable doing on my everyday laptop. It
+would be interesting to explore this when I have a computer where I can mess with the OS bootloader without concern.
 
 \section{Conclusion}
 
