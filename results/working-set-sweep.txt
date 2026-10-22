@@ -1,0 +1,680 @@
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=5.021994 sum=-238.913483 l1_load_miss_rate=5.738994% l2_miss_rate=19.607843% llc_miss_rate=3.472222%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.307322 sum=-14.8656025 l1_load_miss_rate=5.994787% l2_miss_rate=13.392857% llc_miss_rate=3.676471%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.315167 sum=-271.445374 l1_load_miss_rate=6.090554% l2_miss_rate=8.189655% llc_miss_rate=2.420382%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=4.917149 sum=87.0473404 l1_load_miss_rate=6.178977% l2_miss_rate=3.018109% llc_miss_rate=1.146789%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.267959 sum=408.106842 l1_load_miss_rate=6.255634% l2_miss_rate=1.974334% llc_miss_rate=0.840689%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.316780 sum=465.497192 l1_load_miss_rate=6.251702% l2_miss_rate=0.880626% llc_miss_rate=0.412844%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.329183 sum=-1069.50061 l1_load_miss_rate=6.246298% l2_miss_rate=0.512195% llc_miss_rate=0.282121%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.835875 sum=-3874.198 l1_load_miss_rate=6.246196% l2_miss_rate=0.280454% llc_miss_rate=0.144248%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.335215 sum=-3333.53394 l1_load_miss_rate=6.221283% l2_miss_rate=0.688185% llc_miss_rate=0.359691%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.636155 sum=-4864.11865 l1_load_miss_rate=6.241981% l2_miss_rate=0.240957% llc_miss_rate=0.234390%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.703133 sum=-3595.94067 l1_load_miss_rate=6.241992% l2_miss_rate=0.178324% llc_miss_rate=0.144818%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=13.923484 sum=-3324.86523 l1_load_miss_rate=6.242847% l2_miss_rate=0.140263% llc_miss_rate=0.106201%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=5.378408 sum=-16961.9043 l1_load_miss_rate=6.209212% l2_miss_rate=0.662367% llc_miss_rate=0.333326%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=10.683199 sum=-28305.9238 l1_load_miss_rate=6.217118% l2_miss_rate=0.545856% llc_miss_rate=0.275466%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=20.644102 sum=-29959.1191 l1_load_miss_rate=6.243477% l2_miss_rate=0.103948% llc_miss_rate=0.056480%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=58.362306 sum=-46588.8125 l1_load_miss_rate=6.243734% l2_miss_rate=0.141873% llc_miss_rate=0.073765%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=81.524448 sum=-158746.938 l1_load_miss_rate=6.243504% l2_miss_rate=0.133915% llc_miss_rate=0.069716%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.280282 sum=-238.913483 l1_load_miss_rate=5.703125% l2_miss_rate=16.949153% llc_miss_rate=3.690037%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=4.329715 sum=-14.8656025 l1_load_miss_rate=5.953933% l2_miss_rate=11.711712% llc_miss_rate=3.532609%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.248393 sum=-271.445374 l1_load_miss_rate=6.084351% l2_miss_rate=6.046512% llc_miss_rate=1.715040%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.267909 sum=87.0473404 l1_load_miss_rate=6.184957% l2_miss_rate=2.994012% llc_miss_rate=1.150307%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.368507 sum=408.106842 l1_load_miss_rate=6.249627% l2_miss_rate=4.211557% llc_miss_rate=4.122497%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=10.188347 sum=465.497192 l1_load_miss_rate=6.243389% l2_miss_rate=1.031434% llc_miss_rate=0.482315%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.360301 sum=-1069.50061 l1_load_miss_rate=6.246773% l2_miss_rate=0.512570% llc_miss_rate=0.246798%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.517463 sum=-3874.198 l1_load_miss_rate=6.242125% l2_miss_rate=0.658216% llc_miss_rate=0.767279%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.729238 sum=-3333.53394 l1_load_miss_rate=6.241462% l2_miss_rate=0.243917% llc_miss_rate=0.338942%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=5.129936 sum=-4864.11865 l1_load_miss_rate=6.243989% l2_miss_rate=0.121892% llc_miss_rate=0.156207%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.254897 sum=-3595.94067 l1_load_miss_rate=6.242943% l2_miss_rate=0.172230% llc_miss_rate=0.153091%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.554127 sum=-3324.86523 l1_load_miss_rate=6.243388% l2_miss_rate=0.171447% llc_miss_rate=0.124743%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=5.237285 sum=-16961.9043 l1_load_miss_rate=6.224067% l2_miss_rate=0.423447% llc_miss_rate=0.215995%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=23.968864 sum=-28305.9238 l1_load_miss_rate=6.243502% l2_miss_rate=0.112764% llc_miss_rate=0.063450%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=22.324041 sum=-29959.1191 l1_load_miss_rate=6.243258% l2_miss_rate=0.103373% llc_miss_rate=0.056185%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=41.832297 sum=-46588.8125 l1_load_miss_rate=6.243559% l2_miss_rate=0.125222% llc_miss_rate=0.065924%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=85.344503 sum=-158746.938 l1_load_miss_rate=6.243656% l2_miss_rate=0.140765% llc_miss_rate=0.073055%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.238764 sum=-238.913483 l1_load_miss_rate=5.721003% l2_miss_rate=19.298246% llc_miss_rate=4.074074%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.277648 sum=-14.8656025 l1_load_miss_rate=5.966899% l2_miss_rate=12.612613% llc_miss_rate=3.544304%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.366794 sum=-271.445374 l1_load_miss_rate=6.284278% l2_miss_rate=12.903226% llc_miss_rate=6.574394%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=13.021745 sum=87.0473404 l1_load_miss_rate=6.164221% l2_miss_rate=3.505155% llc_miss_rate=1.278195%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.278158 sum=408.106842 l1_load_miss_rate=6.254882% l2_miss_rate=1.554908% llc_miss_rate=0.680851%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.316330 sum=465.497192 l1_load_miss_rate=6.213656% l2_miss_rate=2.842893% llc_miss_rate=2.904834%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.375800 sum=-1069.50061 l1_load_miss_rate=6.246583% l2_miss_rate=0.513447% llc_miss_rate=0.246508%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.812151 sum=-3874.198 l1_load_miss_rate=6.245245% l2_miss_rate=0.268391% llc_miss_rate=0.131492%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.391900 sum=-3333.53394 l1_load_miss_rate=6.245598% l2_miss_rate=0.219432% llc_miss_rate=0.234791%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.021322 sum=-4864.11865 l1_load_miss_rate=6.241779% l2_miss_rate=0.173706% llc_miss_rate=0.216493%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=0.859340 sum=-3595.94067 l1_load_miss_rate=6.206068% l2_miss_rate=0.748905% llc_miss_rate=0.409524%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=10.480902 sum=-3324.86523 l1_load_miss_rate=6.242837% l2_miss_rate=0.118172% llc_miss_rate=0.100981%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=6.204818 sum=-16961.9043 l1_load_miss_rate=6.220681% l2_miss_rate=0.478007% llc_miss_rate=0.242905%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=11.298254 sum=-28305.9238 l1_load_miss_rate=6.212894% l2_miss_rate=0.595587% llc_miss_rate=0.299427%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.730976 sum=-29959.1191 l1_load_miss_rate=6.218972% l2_miss_rate=0.503692% llc_miss_rate=0.252400%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=50.033964 sum=-46588.8125 l1_load_miss_rate=6.243371% l2_miss_rate=0.121010% llc_miss_rate=0.064980%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=85.904507 sum=-158746.938 l1_load_miss_rate=6.241522% l2_miss_rate=0.149472% llc_miss_rate=0.077722%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.269161 sum=-238.913483 l1_load_miss_rate=5.826772% l2_miss_rate=16.949153% llc_miss_rate=3.610108%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.456809 sum=-14.8656025 l1_load_miss_rate=5.966899% l2_miss_rate=12.173913% llc_miss_rate=3.341289%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.256778 sum=-271.445374 l1_load_miss_rate=6.271380% l2_miss_rate=13.761468% llc_miss_rate=4.320988%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.261136 sum=87.0473404 l1_load_miss_rate=6.159120% l2_miss_rate=4.065041% llc_miss_rate=1.494768%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.291663 sum=408.106842 l1_load_miss_rate=6.253755% l2_miss_rate=1.668302% llc_miss_rate=0.724947%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=11.443745 sum=465.497192 l1_load_miss_rate=6.249811% l2_miss_rate=1.032956% llc_miss_rate=0.488486%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.293768 sum=-1069.50061 l1_load_miss_rate=6.248481% l2_miss_rate=0.464094% llc_miss_rate=0.223398%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.449397 sum=-3874.198 l1_load_miss_rate=6.245578% l2_miss_rate=0.305027% llc_miss_rate=0.149370%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.792856 sum=-3333.53394 l1_load_miss_rate=6.243219% l2_miss_rate=0.170493% llc_miss_rate=0.187226%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=9.973286 sum=-4864.11865 l1_load_miss_rate=6.243811% l2_miss_rate=0.161448% llc_miss_rate=0.213627%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=0.813996 sum=-3595.94067 l1_load_miss_rate=6.240637% l2_miss_rate=0.245360% llc_miss_rate=0.170384%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.368631 sum=-3324.86523 l1_load_miss_rate=6.243099% l2_miss_rate=0.113563% llc_miss_rate=0.102487%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=5.694867 sum=-16961.9043 l1_load_miss_rate=6.218019% l2_miss_rate=0.527336% llc_miss_rate=0.268423%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=14.680535 sum=-28305.9238 l1_load_miss_rate=6.243589% l2_miss_rate=0.107495% llc_miss_rate=0.061791%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.411151 sum=-29959.1191 l1_load_miss_rate=6.243402% l2_miss_rate=0.100887% llc_miss_rate=0.055288%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=41.843479 sum=-46588.8125 l1_load_miss_rate=6.243440% l2_miss_rate=0.123269% llc_miss_rate=0.064597%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=91.294887 sum=-158746.938 l1_load_miss_rate=6.243644% l2_miss_rate=0.141834% llc_miss_rate=0.073415%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.243814 sum=-238.913483 l1_load_miss_rate=5.729984% l2_miss_rate=17.241379% llc_miss_rate=3.831418%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.261598 sum=-14.8656025 l1_load_miss_rate=5.948762% l2_miss_rate=13.043478% llc_miss_rate=3.712871%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.253683 sum=-271.445374 l1_load_miss_rate=6.089154% l2_miss_rate=5.809129% llc_miss_rate=1.781170%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.447291 sum=87.0473404 l1_load_miss_rate=6.192280% l2_miss_rate=2.994012% llc_miss_rate=1.157407%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.290902 sum=408.106842 l1_load_miss_rate=6.253379% l2_miss_rate=1.666667% llc_miss_rate=0.723097%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.314836 sum=465.497192 l1_load_miss_rate=6.250756% l2_miss_rate=0.878049% llc_miss_rate=0.416185%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.355993 sum=-1069.50061 l1_load_miss_rate=6.248291% l2_miss_rate=0.511945% llc_miss_rate=0.246566%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=5.536202 sum=-3874.198 l1_load_miss_rate=6.245150% l2_miss_rate=0.292362% llc_miss_rate=0.144161%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.663616 sum=-3333.53394 l1_load_miss_rate=6.244647% l2_miss_rate=0.194956% llc_miss_rate=0.156603%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.925223 sum=-4864.11865 l1_load_miss_rate=6.242039% l2_miss_rate=0.173675% llc_miss_rate=0.193881%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.222747 sum=-3595.94067 l1_load_miss_rate=6.242716% l2_miss_rate=0.118850% llc_miss_rate=0.135043%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=8.351916 sum=-3324.86523 l1_load_miss_rate=6.243215% l2_miss_rate=0.131866% llc_miss_rate=0.110079%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=5.346599 sum=-16961.9043 l1_load_miss_rate=6.224919% l2_miss_rate=0.412893% llc_miss_rate=0.206124%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=11.480774 sum=-28305.9238 l1_load_miss_rate=6.243472% l2_miss_rate=0.104261% llc_miss_rate=0.058850%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.003972 sum=-29959.1191 l1_load_miss_rate=6.217269% l2_miss_rate=0.543566% llc_miss_rate=0.272854%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=50.945622 sum=-46588.8125 l1_load_miss_rate=6.243582% l2_miss_rate=0.137596% llc_miss_rate=0.072133%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=83.374364 sum=-158746.938 l1_load_miss_rate=6.243642% l2_miss_rate=0.137853% llc_miss_rate=0.071457%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.254003 sum=-238.913483 dtlb_page_walk_rate=0.174368%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=13.063843 sum=-14.8656025 dtlb_page_walk_rate=0.138185%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.203539 sum=-271.445374 dtlb_page_walk_rate=0.187135%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.144960 sum=87.0473404 dtlb_page_walk_rate=0.143284%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.246409 sum=408.106842 dtlb_page_walk_rate=0.121315%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=11.114832 sum=465.497192 dtlb_page_walk_rate=0.106454%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.310158 sum=-1069.50061 dtlb_page_walk_rate=0.103599%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.394755 sum=-3874.198 dtlb_page_walk_rate=0.102154%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.594657 sum=-3333.53394 dtlb_page_walk_rate=0.099086%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=8.776907 sum=-4864.11865 dtlb_page_walk_rate=0.098390%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.254536 sum=-3595.94067 dtlb_page_walk_rate=0.098001%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=1.407120 sum=-3324.86523 dtlb_page_walk_rate=0.097809%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=5.350055 sum=-16961.9043 dtlb_page_walk_rate=0.097852%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=22.000669 sum=-28305.9238 dtlb_page_walk_rate=0.097781%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.403617 sum=-29959.1191 dtlb_page_walk_rate=0.097691%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=40.985740 sum=-46588.8125 dtlb_page_walk_rate=0.097664%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=95.262687 sum=-158746.938 dtlb_page_walk_rate=0.097724%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.179976 sum=-238.913483 dtlb_page_walk_rate=0.174368%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.193520 sum=-14.8656025 dtlb_page_walk_rate=0.141110%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.198068 sum=-271.445374 dtlb_page_walk_rate=0.187091%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=4.703271 sum=87.0473404 dtlb_page_walk_rate=0.143284%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.245117 sum=408.106842 dtlb_page_walk_rate=0.121168%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.262640 sum=465.497192 dtlb_page_walk_rate=0.115551%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.294368 sum=-1069.50061 dtlb_page_walk_rate=0.103599%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.910604 sum=-3874.198 dtlb_page_walk_rate=0.100630%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.603294 sum=-3333.53394 dtlb_page_walk_rate=0.099124%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.006635 sum=-4864.11865 dtlb_page_walk_rate=0.098190%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.466432 sum=-3595.94067 dtlb_page_walk_rate=0.098926%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.076959 sum=-3324.86523 dtlb_page_walk_rate=0.098387%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.061255 sum=-16961.9043 dtlb_page_walk_rate=0.097873%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=10.359405 sum=-28305.9238 dtlb_page_walk_rate=0.096893%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.363302 sum=-29959.1191 dtlb_page_walk_rate=0.097699%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=53.138315 sum=-46588.8125 dtlb_page_walk_rate=0.097741%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=81.858361 sum=-158746.938 dtlb_page_walk_rate=0.097678%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.205483 sum=-238.913483 dtlb_page_walk_rate=0.166251%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.918859 sum=-14.8656025 dtlb_page_walk_rate=0.138376%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.210892 sum=-271.445374 dtlb_page_walk_rate=0.189573%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.218236 sum=87.0473404 dtlb_page_walk_rate=0.144300%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.225150 sum=408.106842 dtlb_page_walk_rate=0.121161%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=7.479652 sum=465.497192 dtlb_page_walk_rate=0.109522%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.328903 sum=-1069.50061 dtlb_page_walk_rate=0.103597%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.395717 sum=-3874.198 dtlb_page_walk_rate=0.100629%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.471999 sum=-3333.53394 dtlb_page_walk_rate=0.100627%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=4.842960 sum=-4864.11865 dtlb_page_walk_rate=0.098181%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.348582 sum=-3595.94067 dtlb_page_walk_rate=0.097905%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.762977 sum=-3324.86523 dtlb_page_walk_rate=0.098335%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=6.200318 sum=-16961.9043 dtlb_page_walk_rate=0.097886%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=17.870045 sum=-28305.9238 dtlb_page_walk_rate=0.097850%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.580927 sum=-29959.1191 dtlb_page_walk_rate=0.097712%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=40.640307 sum=-46588.8125 dtlb_page_walk_rate=0.097686%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=86.459911 sum=-158746.938 dtlb_page_walk_rate=0.097548%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.213387 sum=-238.913483 dtlb_page_walk_rate=0.174520%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.212827 sum=-14.8656025 dtlb_page_walk_rate=0.138122%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.286062 sum=-271.445374 dtlb_page_walk_rate=0.278875%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=8.129021 sum=87.0473404 dtlb_page_walk_rate=0.144317%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.228506 sum=408.106842 dtlb_page_walk_rate=0.121161%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.248633 sum=465.497192 dtlb_page_walk_rate=0.106428%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.346876 sum=-1069.50061 dtlb_page_walk_rate=0.103597%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.853377 sum=-3874.198 dtlb_page_walk_rate=0.100629%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.540787 sum=-3333.53394 dtlb_page_walk_rate=0.102086%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.050397 sum=-4864.11865 dtlb_page_walk_rate=0.098182%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.380922 sum=-3595.94067 dtlb_page_walk_rate=0.098520%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.527378 sum=-3324.86523 dtlb_page_walk_rate=0.097759%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=6.346380 sum=-16961.9043 dtlb_page_walk_rate=0.097878%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=10.513693 sum=-28305.9238 dtlb_page_walk_rate=0.097757%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.470431 sum=-29959.1191 dtlb_page_walk_rate=0.097712%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=45.743112 sum=-46588.8125 dtlb_page_walk_rate=0.097686%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=81.312694 sum=-158746.938 dtlb_page_walk_rate=0.097693%
+kernel=array-reduction-sum elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.219279 sum=-238.913483 dtlb_page_walk_rate=0.174368%
+kernel=array-reduction-sum elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.700984 sum=-14.8656025 dtlb_page_walk_rate=0.139535%
+kernel=array-reduction-sum elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.224588 sum=-271.445374 dtlb_page_walk_rate=0.190522%
+kernel=array-reduction-sum elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.217405 sum=87.0473404 dtlb_page_walk_rate=0.143335%
+kernel=array-reduction-sum elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.305749 sum=408.106842 dtlb_page_walk_rate=0.174216%
+kernel=array-reduction-sum elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=4.098284 sum=465.497192 dtlb_page_walk_rate=0.106480%
+kernel=array-reduction-sum elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.305559 sum=-1069.50061 dtlb_page_walk_rate=0.103597%
+kernel=array-reduction-sum elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.471959 sum=-3874.198 dtlb_page_walk_rate=0.106560%
+kernel=array-reduction-sum elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.605257 sum=-3333.53394 dtlb_page_walk_rate=0.099104%
+kernel=array-reduction-sum elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=4.553101 sum=-4864.11865 dtlb_page_walk_rate=0.098390%
+kernel=array-reduction-sum elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=0.848771 sum=-3595.94067 dtlb_page_walk_rate=0.098949%
+kernel=array-reduction-sum elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.731338 sum=-3324.86523 dtlb_page_walk_rate=0.098383%
+kernel=array-reduction-sum elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=5.479456 sum=-16961.9043 dtlb_page_walk_rate=0.097131%
+kernel=array-reduction-sum elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=23.578688 sum=-28305.9238 dtlb_page_walk_rate=0.097737%
+kernel=array-reduction-sum elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=21.616954 sum=-29959.1191 dtlb_page_walk_rate=0.097716%
+kernel=array-reduction-sum elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=42.268230 sum=-46588.8125 dtlb_page_walk_rate=0.097690%
+kernel=array-reduction-sum elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=90.173408 sum=-158746.938 dtlb_page_walk_rate=0.097687%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.226592 l1_load_miss_rate=NA l2_miss_rate=11.764706% llc_miss_rate=2.684564%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.169426 l1_load_miss_rate=NA l2_miss_rate=12.500000% llc_miss_rate=3.317536%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.244816 l1_load_miss_rate=NA l2_miss_rate=5.725191% llc_miss_rate=2.122016%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=15.518405 l1_load_miss_rate=NA l2_miss_rate=2.952756% llc_miss_rate=1.443464%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.322210 l1_load_miss_rate=NA l2_miss_rate=1.449275% llc_miss_rate=0.701754%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.336036 l1_load_miss_rate=NA l2_miss_rate=0.411335% llc_miss_rate=0.645161%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=9.418433 l1_load_miss_rate=NA l2_miss_rate=0.326112% llc_miss_rate=0.293255%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.534335 l1_load_miss_rate=NA l2_miss_rate=0.045819% llc_miss_rate=0.070582%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=8.804370 l1_load_miss_rate=NA l2_miss_rate=0.137607% llc_miss_rate=0.289279%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.298589 l1_load_miss_rate=NA l2_miss_rate=0.140679% llc_miss_rate=0.253837%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=10.256203 l1_load_miss_rate=NA l2_miss_rate=0.078834% llc_miss_rate=0.116805%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=1.882857 l1_load_miss_rate=NA l2_miss_rate=0.071814% llc_miss_rate=0.094066%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.064802 l1_load_miss_rate=NA l2_miss_rate=0.066159% llc_miss_rate=0.063824%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=16.851027 l1_load_miss_rate=NA l2_miss_rate=0.057683% llc_miss_rate=0.054964%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=36.011145 l1_load_miss_rate=NA l2_miss_rate=0.053016% llc_miss_rate=0.042596%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=56.980934 l1_load_miss_rate=NA l2_miss_rate=0.058648% llc_miss_rate=0.044131%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=122.277716 l1_load_miss_rate=NA l2_miss_rate=0.047387% llc_miss_rate=0.034914%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.296082 l1_load_miss_rate=NA l2_miss_rate=11.940299% llc_miss_rate=3.676471%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.218137 l1_load_miss_rate=NA l2_miss_rate=9.160305% llc_miss_rate=2.919708%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.219418 l1_load_miss_rate=NA l2_miss_rate=7.346939% llc_miss_rate=2.628121%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=8.941114 l1_load_miss_rate=NA l2_miss_rate=3.157895% llc_miss_rate=1.291364%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.236089 l1_load_miss_rate=NA l2_miss_rate=1.260912% llc_miss_rate=0.599829%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.295591 l1_load_miss_rate=NA l2_miss_rate=0.457247% llc_miss_rate=0.393922%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.352317 l1_load_miss_rate=NA l2_miss_rate=0.252005% llc_miss_rate=0.253959%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.615665 l1_load_miss_rate=NA l2_miss_rate=0.206683% llc_miss_rate=0.162774%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.695014 l1_load_miss_rate=NA l2_miss_rate=0.148920% llc_miss_rate=0.261195%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.313847 l1_load_miss_rate=NA l2_miss_rate=0.129014% llc_miss_rate=0.220683%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.510293 l1_load_miss_rate=NA l2_miss_rate=0.089283% llc_miss_rate=0.153167%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=10.504927 l1_load_miss_rate=NA l2_miss_rate=0.064631% llc_miss_rate=0.089491%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=7.160407 l1_load_miss_rate=NA l2_miss_rate=0.054336% llc_miss_rate=0.048732%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=16.080471 l1_load_miss_rate=NA l2_miss_rate=0.054389% llc_miss_rate=0.047452%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=28.257072 l1_load_miss_rate=NA l2_miss_rate=0.046011% llc_miss_rate=0.036502%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=58.194384 l1_load_miss_rate=NA l2_miss_rate=0.048021% llc_miss_rate=0.036337%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=134.871233 l1_load_miss_rate=NA l2_miss_rate=0.048236% llc_miss_rate=0.034613%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.238194 l1_load_miss_rate=NA l2_miss_rate=11.940299% llc_miss_rate=3.401361%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.222625 l1_load_miss_rate=NA l2_miss_rate=12.295082% llc_miss_rate=4.136253%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.234767 l1_load_miss_rate=NA l2_miss_rate=7.723577% llc_miss_rate=2.570694%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=10.479760 l1_load_miss_rate=NA l2_miss_rate=3.974895% llc_miss_rate=1.656151%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.158485 l1_load_miss_rate=NA l2_miss_rate=1.660156% llc_miss_rate=0.832603%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.283928 l1_load_miss_rate=NA l2_miss_rate=0.320366% llc_miss_rate=0.247593%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.290721 l1_load_miss_rate=NA l2_miss_rate=0.756014% llc_miss_rate=1.265237%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.934208 l1_load_miss_rate=NA l2_miss_rate=0.171900% llc_miss_rate=0.168971%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.699884 l1_load_miss_rate=NA l2_miss_rate=0.177803% llc_miss_rate=0.319536%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.774502 l1_load_miss_rate=NA l2_miss_rate=0.071693% llc_miss_rate=0.202350%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.470949 l1_load_miss_rate=NA l2_miss_rate=0.097798% llc_miss_rate=0.155386%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=10.928125 l1_load_miss_rate=NA l2_miss_rate=0.066743% llc_miss_rate=0.089643%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=7.807152 l1_load_miss_rate=NA l2_miss_rate=0.056239% llc_miss_rate=0.052127%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=21.662909 l1_load_miss_rate=NA l2_miss_rate=0.084528% llc_miss_rate=0.070714%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=37.080126 l1_load_miss_rate=NA l2_miss_rate=0.047787% llc_miss_rate=0.041309%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=66.266458 l1_load_miss_rate=NA l2_miss_rate=0.059772% llc_miss_rate=0.044380%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=131.718661 l1_load_miss_rate=NA l2_miss_rate=0.045514% llc_miss_rate=0.035244%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.227594 l1_load_miss_rate=NA l2_miss_rate=17.543860% llc_miss_rate=4.135338%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.282336 l1_load_miss_rate=NA l2_miss_rate=10.769231% llc_miss_rate=3.456790%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=3.862634 l1_load_miss_rate=NA l2_miss_rate=6.177606% llc_miss_rate=2.770083%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.296953 l1_load_miss_rate=NA l2_miss_rate=3.937008% llc_miss_rate=1.566171%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.283769 l1_load_miss_rate=NA l2_miss_rate=1.841085% llc_miss_rate=0.965759%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=3.587603 l1_load_miss_rate=NA l2_miss_rate=0.612630% llc_miss_rate=0.587689%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.394996 l1_load_miss_rate=NA l2_miss_rate=0.183150% llc_miss_rate=0.201895%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.513236 l1_load_miss_rate=NA l2_miss_rate=0.183929% llc_miss_rate=0.168006%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=5.864493 l1_load_miss_rate=NA l2_miss_rate=0.137544% llc_miss_rate=0.209138%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.165150 l1_load_miss_rate=NA l2_miss_rate=0.108920% llc_miss_rate=0.223206%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.569584 l1_load_miss_rate=NA l2_miss_rate=0.068771% llc_miss_rate=0.131603%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.879654 l1_load_miss_rate=NA l2_miss_rate=0.053912% llc_miss_rate=0.080021%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=12.741903 l1_load_miss_rate=NA l2_miss_rate=0.045735% llc_miss_rate=0.046066%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=14.899502 l1_load_miss_rate=NA l2_miss_rate=0.041607% llc_miss_rate=0.034531%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=31.167202 l1_load_miss_rate=NA l2_miss_rate=0.058542% llc_miss_rate=0.045001%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=67.909289 l1_load_miss_rate=NA l2_miss_rate=0.044843% llc_miss_rate=0.033928%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=118.764472 l1_load_miss_rate=NA l2_miss_rate=0.040480% llc_miss_rate=0.029565%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.184163 l1_load_miss_rate=NA l2_miss_rate=29.629630% llc_miss_rate=16.705882%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=9.677415 l1_load_miss_rate=NA l2_miss_rate=13.740458% llc_miss_rate=4.157044%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.232352 l1_load_miss_rate=NA l2_miss_rate=5.791506% llc_miss_rate=2.043597%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.258582 l1_load_miss_rate=NA l2_miss_rate=2.935421% llc_miss_rate=1.204819%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.233274 l1_load_miss_rate=NA l2_miss_rate=1.644101% llc_miss_rate=0.785683%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=4.964758 l1_load_miss_rate=NA l2_miss_rate=0.368834% llc_miss_rate=0.333940%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.288959 l1_load_miss_rate=NA l2_miss_rate=0.616438% llc_miss_rate=0.832679%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.455799 l1_load_miss_rate=NA l2_miss_rate=0.206493% llc_miss_rate=0.215589%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.775214 l1_load_miss_rate=NA l2_miss_rate=0.120752% llc_miss_rate=0.259408%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=4.866163 l1_load_miss_rate=NA l2_miss_rate=0.094898% llc_miss_rate=0.211746%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.788611 l1_load_miss_rate=NA l2_miss_rate=0.068991% llc_miss_rate=0.124401%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.901344 l1_load_miss_rate=NA l2_miss_rate=0.069571% llc_miss_rate=0.087640%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.027592 l1_load_miss_rate=NA l2_miss_rate=0.056406% llc_miss_rate=0.051053%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=25.567262 l1_load_miss_rate=NA l2_miss_rate=0.052304% llc_miss_rate=0.046330%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=29.466004 l1_load_miss_rate=NA l2_miss_rate=0.053052% llc_miss_rate=0.041271%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=60.263086 l1_load_miss_rate=NA l2_miss_rate=0.038121% llc_miss_rate=0.028298%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=123.417439 l1_load_miss_rate=NA l2_miss_rate=0.039004% llc_miss_rate=0.028223%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.198950 dtlb_page_walk_rate=0.082645%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.233014 dtlb_page_walk_rate=0.092336%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.223336 dtlb_page_walk_rate=0.166113%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.820767 dtlb_page_walk_rate=0.132387%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.217836 dtlb_page_walk_rate=0.114672%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.305820 dtlb_page_walk_rate=0.275691%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.332940 dtlb_page_walk_rate=0.275874%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.642865 dtlb_page_walk_rate=0.273172%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.665991 dtlb_page_walk_rate=0.271604%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.167044 dtlb_page_walk_rate=0.272330%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.638312 dtlb_page_walk_rate=0.270979%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=12.723559 dtlb_page_walk_rate=0.270788%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=7.464454 dtlb_page_walk_rate=0.270761%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=13.430105 dtlb_page_walk_rate=0.270826%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=28.941617 dtlb_page_walk_rate=0.270630%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=65.189573 dtlb_page_walk_rate=0.270692%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=117.778686 dtlb_page_walk_rate=0.270942%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=3.710250 dtlb_page_walk_rate=0.086430%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.254293 dtlb_page_walk_rate=0.089606%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.264803 dtlb_page_walk_rate=0.165524%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.475504 dtlb_page_walk_rate=0.132100%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.263982 dtlb_page_walk_rate=0.115033%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.297384 dtlb_page_walk_rate=0.275668%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=12.210303 dtlb_page_walk_rate=0.275812%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.402630 dtlb_page_walk_rate=0.276731%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.758934 dtlb_page_walk_rate=0.272019%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.060145 dtlb_page_walk_rate=0.272736%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=8.994754 dtlb_page_walk_rate=0.270660%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.810595 dtlb_page_walk_rate=0.270862%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.845986 dtlb_page_walk_rate=0.270806%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=14.344629 dtlb_page_walk_rate=0.270796%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=33.994228 dtlb_page_walk_rate=0.270649%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=57.115795 dtlb_page_walk_rate=0.270637%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=126.588846 dtlb_page_walk_rate=0.270629%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.224608 dtlb_page_walk_rate=0.087566%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.199912 dtlb_page_walk_rate=0.092208%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.193480 dtlb_page_walk_rate=0.163513%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=12.230301 dtlb_page_walk_rate=0.132371%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.234928 dtlb_page_walk_rate=0.114672%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.257039 dtlb_page_walk_rate=0.278090%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.338270 dtlb_page_walk_rate=0.284275%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=5.011204 dtlb_page_walk_rate=0.273168%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.609195 dtlb_page_walk_rate=0.274284%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.062359 dtlb_page_walk_rate=0.271010%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.907262 dtlb_page_walk_rate=0.271692%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=7.656932 dtlb_page_walk_rate=0.271029%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.494342 dtlb_page_walk_rate=0.270771%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=15.596430 dtlb_page_walk_rate=0.270770%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=32.445072 dtlb_page_walk_rate=0.270627%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=58.017474 dtlb_page_walk_rate=0.270653%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=129.341393 dtlb_page_walk_rate=0.270595%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.216363 dtlb_page_walk_rate=0.082781%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.212496 dtlb_page_walk_rate=0.091575%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.218957 dtlb_page_walk_rate=0.165446%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=4.108783 dtlb_page_walk_rate=0.132371%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.233024 dtlb_page_walk_rate=0.115138%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.222264 dtlb_page_walk_rate=0.278481%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.275994 dtlb_page_walk_rate=0.273201%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.606798 dtlb_page_walk_rate=0.272342%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.705805 dtlb_page_walk_rate=0.271937%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.944810 dtlb_page_walk_rate=0.273032%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.599980 dtlb_page_walk_rate=0.270624%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.157670 dtlb_page_walk_rate=0.271059%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.735831 dtlb_page_walk_rate=0.270718%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=14.051131 dtlb_page_walk_rate=0.270649%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=28.623654 dtlb_page_walk_rate=0.270850%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=65.879568 dtlb_page_walk_rate=0.270679%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=123.129753 dtlb_page_walk_rate=0.270626%
+kernel=memset elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=3.602180 dtlb_page_walk_rate=0.082645%
+kernel=memset elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.210401 dtlb_page_walk_rate=0.089445%
+kernel=memset elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.229077 dtlb_page_walk_rate=0.166113%
+kernel=memset elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.228034 dtlb_page_walk_rate=0.131328%
+kernel=memset elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=16.254666 dtlb_page_walk_rate=0.114679%
+kernel=memset elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.267528 dtlb_page_walk_rate=0.275536%
+kernel=memset elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.286954 dtlb_page_walk_rate=0.274601%
+kernel=memset elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.346305 dtlb_page_walk_rate=0.272685%
+kernel=memset elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=13.294653 dtlb_page_walk_rate=0.271502%
+kernel=memset elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.816821 dtlb_page_walk_rate=0.272540%
+kernel=memset elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.236403 dtlb_page_walk_rate=0.271281%
+kernel=memset elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=3.043268 dtlb_page_walk_rate=0.270739%
+kernel=memset elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=19.523054 dtlb_page_walk_rate=0.270897%
+kernel=memset elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=13.828728 dtlb_page_walk_rate=0.270696%
+kernel=memset elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=27.193401 dtlb_page_walk_rate=0.270611%
+kernel=memset elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=61.357215 dtlb_page_walk_rate=0.270649%
+kernel=memset elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=116.059274 dtlb_page_walk_rate=0.270656%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=8.433127 l1_load_miss_rate=5.947732% l2_miss_rate=33.333333% llc_miss_rate=6.653992%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.187860 l1_load_miss_rate=6.066291% l2_miss_rate=13.058419% llc_miss_rate=3.946002%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=4.644250 l1_load_miss_rate=6.233559% l2_miss_rate=7.780980% llc_miss_rate=2.772074%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.246960 l1_load_miss_rate=6.401482% l2_miss_rate=4.186361% llc_miss_rate=1.723180%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=3.750115 l1_load_miss_rate=6.139694% l2_miss_rate=3.567856% llc_miss_rate=1.704908%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.271786 l1_load_miss_rate=5.939348% l2_miss_rate=4.716643% llc_miss_rate=2.183259%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=3.926744 l1_load_miss_rate=5.919405% l2_miss_rate=2.579348% llc_miss_rate=1.342922%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.489562 l1_load_miss_rate=5.933070% l2_miss_rate=2.388894% llc_miss_rate=1.321165%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=8.857608 l1_load_miss_rate=5.943584% l2_miss_rate=3.572819% llc_miss_rate=1.754350%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.251632 l1_load_miss_rate=5.937279% l2_miss_rate=4.610878% llc_miss_rate=2.217207%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=6.358935 l1_load_miss_rate=5.920446% l2_miss_rate=4.203945% llc_miss_rate=2.021395%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=3.059408 l1_load_miss_rate=5.937268% l2_miss_rate=4.275681% llc_miss_rate=1.956264%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=14.195811 l1_load_miss_rate=6.332679% l2_miss_rate=3.814326% llc_miss_rate=1.775618%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=19.976809 l1_load_miss_rate=5.981190% l2_miss_rate=4.161550% llc_miss_rate=1.894941%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=45.953183 l1_load_miss_rate=7.204338% l2_miss_rate=1.924891% llc_miss_rate=0.874403%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=65.467410 l1_load_miss_rate=5.952057% l2_miss_rate=4.018752% llc_miss_rate=1.789270%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=151.022325 l1_load_miss_rate=5.947509% l2_miss_rate=4.306437% llc_miss_rate=1.935517%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.248393 l1_load_miss_rate=5.850422% l2_miss_rate=16.296296% llc_miss_rate=3.660566%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.636413 l1_load_miss_rate=6.051603% l2_miss_rate=11.688312% llc_miss_rate=3.699897%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=16.881603 l1_load_miss_rate=6.250498% l2_miss_rate=8.774834% llc_miss_rate=2.636816%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=12.327030 l1_load_miss_rate=6.308120% l2_miss_rate=3.917526% llc_miss_rate=1.610624%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=11.251216 l1_load_miss_rate=6.141785% l2_miss_rate=4.699828% llc_miss_rate=2.107692%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.294829 l1_load_miss_rate=5.910655% l2_miss_rate=1.598023% llc_miss_rate=0.848125%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=4.106990 l1_load_miss_rate=5.936750% l2_miss_rate=2.182935% llc_miss_rate=1.111251%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.519127 l1_load_miss_rate=5.935043% l2_miss_rate=3.917782% llc_miss_rate=2.069319%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=4.274221 l1_load_miss_rate=5.931725% l2_miss_rate=2.925975% llc_miss_rate=1.483556%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.842389 l1_load_miss_rate=5.926986% l2_miss_rate=4.231416% llc_miss_rate=1.980769%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=5.499413 l1_load_miss_rate=5.916478% l2_miss_rate=4.007756% llc_miss_rate=1.919303%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.156346 l1_load_miss_rate=5.969321% l2_miss_rate=3.005253% llc_miss_rate=1.391398%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=17.038256 l1_load_miss_rate=6.072306% l2_miss_rate=3.548083% llc_miss_rate=1.650017%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=16.761481 l1_load_miss_rate=6.332832% l2_miss_rate=3.402864% llc_miss_rate=1.559125%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=44.039108 l1_load_miss_rate=6.549181% l2_miss_rate=2.542216% llc_miss_rate=1.159471%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=68.413889 l1_load_miss_rate=5.941936% l2_miss_rate=4.269131% llc_miss_rate=1.889873%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=153.134360 l1_load_miss_rate=5.973748% l2_miss_rate=2.443189% llc_miss_rate=1.109323%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.249455 l1_load_miss_rate=5.866426% l2_miss_rate=16.778523% llc_miss_rate=4.194631%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.551505 l1_load_miss_rate=6.057286% l2_miss_rate=12.621359% llc_miss_rate=4.054054%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.255476 l1_load_miss_rate=6.291364% l2_miss_rate=7.854137% llc_miss_rate=2.746444%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.538561 l1_load_miss_rate=6.312399% l2_miss_rate=3.924222% llc_miss_rate=1.625105%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.350122 l1_load_miss_rate=6.129483% l2_miss_rate=3.543965% llc_miss_rate=1.813516%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=8.366464 l1_load_miss_rate=5.916927% l2_miss_rate=2.406372% llc_miss_rate=1.155035%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.386460 l1_load_miss_rate=5.931841% l2_miss_rate=3.493338% llc_miss_rate=1.653869%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=4.198320 l1_load_miss_rate=5.925474% l2_miss_rate=2.940063% llc_miss_rate=1.533619%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.687310 l1_load_miss_rate=5.940238% l2_miss_rate=4.777790% llc_miss_rate=2.275474%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=9.895181 l1_load_miss_rate=5.927096% l2_miss_rate=4.376828% llc_miss_rate=2.180433%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.416509 l1_load_miss_rate=5.947534% l2_miss_rate=3.844387% llc_miss_rate=1.810941%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=18.977137 l1_load_miss_rate=5.932866% l2_miss_rate=2.855669% llc_miss_rate=1.331194%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.934151 l1_load_miss_rate=6.252523% l2_miss_rate=4.661755% llc_miss_rate=2.131552%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=22.543420 l1_load_miss_rate=6.472403% l2_miss_rate=3.695722% llc_miss_rate=1.661682%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=34.829785 l1_load_miss_rate=6.075894% l2_miss_rate=3.416072% llc_miss_rate=1.546416%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=78.410308 l1_load_miss_rate=5.940139% l2_miss_rate=4.404973% llc_miss_rate=1.982410%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=140.065247 l1_load_miss_rate=5.974899% l2_miss_rate=2.393549% llc_miss_rate=1.081315%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.275824 l1_load_miss_rate=5.846896% l2_miss_rate=15.646259% llc_miss_rate=3.885135%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=7.040143 l1_load_miss_rate=6.049711% l2_miss_rate=11.392405% llc_miss_rate=3.719008%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.254374 l1_load_miss_rate=6.266943% l2_miss_rate=7.658960% llc_miss_rate=2.589155%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=4.199151 l1_load_miss_rate=6.308120% l2_miss_rate=4.561161% llc_miss_rate=1.842546%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.313815 l1_load_miss_rate=6.140264% l2_miss_rate=2.850514% llc_miss_rate=1.299683%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=14.304844 l1_load_miss_rate=5.911722% l2_miss_rate=4.586835% llc_miss_rate=2.105263%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.367244 l1_load_miss_rate=5.951484% l2_miss_rate=2.865305% llc_miss_rate=1.456552%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.823071 l1_load_miss_rate=5.926182% l2_miss_rate=2.459257% llc_miss_rate=1.323556%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.718398 l1_load_miss_rate=5.918716% l2_miss_rate=3.714922% llc_miss_rate=1.888649%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=10.114991 l1_load_miss_rate=5.929418% l2_miss_rate=4.669688% llc_miss_rate=2.180506%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.866847 l1_load_miss_rate=5.946261% l2_miss_rate=4.587089% llc_miss_rate=2.144106%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=11.617910 l1_load_miss_rate=5.925251% l2_miss_rate=4.028548% llc_miss_rate=1.877757%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=10.828600 l1_load_miss_rate=6.335305% l2_miss_rate=3.339043% llc_miss_rate=1.578105%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=32.754629 l1_load_miss_rate=6.673847% l2_miss_rate=3.274093% llc_miss_rate=1.546871%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=32.631801 l1_load_miss_rate=6.158807% l2_miss_rate=4.068514% llc_miss_rate=1.810916%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=74.593789 l1_load_miss_rate=5.949196% l2_miss_rate=3.961789% llc_miss_rate=1.787636%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=146.297706 l1_load_miss_rate=5.950400% l2_miss_rate=4.097995% llc_miss_rate=1.831139%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.290902 l1_load_miss_rate=5.923031% l2_miss_rate=18.705036% llc_miss_rate=4.391892%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=12.490856 l1_load_miss_rate=6.077694% l2_miss_rate=13.099042% llc_miss_rate=4.235537%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.257139 l1_load_miss_rate=6.259469% l2_miss_rate=7.769784% llc_miss_rate=2.596154%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.674254 l1_load_miss_rate=6.314900% l2_miss_rate=4.043866% llc_miss_rate=1.664786%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.308444 l1_load_miss_rate=6.126949% l2_miss_rate=3.638769% llc_miss_rate=1.755226%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=3.569378 l1_load_miss_rate=5.918958% l2_miss_rate=4.152968% llc_miss_rate=1.836750%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.390327 l1_load_miss_rate=5.952250% l2_miss_rate=3.259635% llc_miss_rate=1.808038%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.937665 l1_load_miss_rate=5.920794% l2_miss_rate=3.861859% llc_miss_rate=1.989733%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.562688 l1_load_miss_rate=5.916599% l2_miss_rate=3.049513% llc_miss_rate=1.494158%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=5.152427 l1_load_miss_rate=5.928241% l2_miss_rate=4.336392% llc_miss_rate=2.114091%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.925125 l1_load_miss_rate=5.939025% l2_miss_rate=2.813199% llc_miss_rate=1.343605%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=7.059659 l1_load_miss_rate=5.926637% l2_miss_rate=3.213996% llc_miss_rate=1.524485%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.969878 l1_load_miss_rate=6.199442% l2_miss_rate=3.347858% llc_miss_rate=1.542552%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=23.821049 l1_load_miss_rate=6.786699% l2_miss_rate=3.438399% llc_miss_rate=1.625160%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=33.330702 l1_load_miss_rate=6.115297% l2_miss_rate=4.173029% llc_miss_rate=1.846231%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=77.585331 l1_load_miss_rate=5.952469% l2_miss_rate=4.604603% llc_miss_rate=2.027452%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=156.052074 l1_load_miss_rate=5.945843% l2_miss_rate=4.447276% llc_miss_rate=1.973567%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.224779 dtlb_page_walk_rate=0.132743%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=9.701731 dtlb_page_walk_rate=0.141743%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.225650 dtlb_page_walk_rate=0.156081%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=4.621157 dtlb_page_walk_rate=0.115005%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.232713 dtlb_page_walk_rate=0.212283%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=3.754683 dtlb_page_walk_rate=0.234833%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.350573 dtlb_page_walk_rate=0.229875%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=16.507437 dtlb_page_walk_rate=0.229575%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.673665 dtlb_page_walk_rate=0.229180%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=10.448461 dtlb_page_walk_rate=0.194352%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=2.323417 dtlb_page_walk_rate=0.194500%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=8.676471 dtlb_page_walk_rate=0.193084%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=11.674796 dtlb_page_walk_rate=0.227084%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=28.972134 dtlb_page_walk_rate=0.192024%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=34.821008 dtlb_page_walk_rate=0.225935%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=80.660439 dtlb_page_walk_rate=0.226325%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=157.888114 dtlb_page_walk_rate=0.190965%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.218637 dtlb_page_walk_rate=0.137300%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.395084 dtlb_page_walk_rate=0.141777%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.248543 dtlb_page_walk_rate=0.156137%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.613540 dtlb_page_walk_rate=0.114866%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.252359 dtlb_page_walk_rate=0.224529%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=12.469607 dtlb_page_walk_rate=0.234826%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.328562 dtlb_page_walk_rate=0.202677%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=4.059412 dtlb_page_walk_rate=0.227733%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.802935 dtlb_page_walk_rate=0.229235%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=5.085923 dtlb_page_walk_rate=0.229817%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.923753 dtlb_page_walk_rate=0.193758%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=15.731772 dtlb_page_walk_rate=0.193944%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.983462 dtlb_page_walk_rate=0.191007%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=23.237453 dtlb_page_walk_rate=0.227039%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=35.112160 dtlb_page_walk_rate=0.226967%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=69.102642 dtlb_page_walk_rate=0.194176%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=269.800383 dtlb_page_walk_rate=0.202519%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=10.866110 dtlb_page_walk_rate=0.136054%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.614362 dtlb_page_walk_rate=0.141077%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.199191 dtlb_page_walk_rate=0.156081%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.761506 dtlb_page_walk_rate=0.151323%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.250246 dtlb_page_walk_rate=0.221613%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=3.918639 dtlb_page_walk_rate=0.173256%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.330626 dtlb_page_walk_rate=0.231307%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=4.283849 dtlb_page_walk_rate=0.229574%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.644451 dtlb_page_walk_rate=0.229164%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=4.890138 dtlb_page_walk_rate=0.232212%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.921399 dtlb_page_walk_rate=0.228123%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.652561 dtlb_page_walk_rate=0.192865%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=11.127647 dtlb_page_walk_rate=0.227024%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=23.647977 dtlb_page_walk_rate=0.226496%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=42.201445 dtlb_page_walk_rate=0.227875%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=79.093390 dtlb_page_walk_rate=0.190875%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=160.768670 dtlb_page_walk_rate=0.192293%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.210452 dtlb_page_walk_rate=0.137300%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.638146 dtlb_page_walk_rate=0.141743%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.216784 dtlb_page_walk_rate=0.156100%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=12.349382 dtlb_page_walk_rate=0.150639%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.258932 dtlb_page_walk_rate=0.168747%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=4.004589 dtlb_page_walk_rate=0.234826%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.312892 dtlb_page_walk_rate=0.231332%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=8.469455 dtlb_page_walk_rate=0.195521%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.703981 dtlb_page_walk_rate=0.195168%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=13.392104 dtlb_page_walk_rate=0.194815%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=2.024942 dtlb_page_walk_rate=0.229106%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=7.225769 dtlb_page_walk_rate=0.228032%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=12.011512 dtlb_page_walk_rate=0.226543%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=24.042021 dtlb_page_walk_rate=0.226789%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=33.831896 dtlb_page_walk_rate=0.192159%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=70.956194 dtlb_page_walk_rate=0.225152%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=137.917507 dtlb_page_walk_rate=0.191800%
+kernel=vector-elementwise-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.207006 dtlb_page_walk_rate=0.137552%
+kernel=vector-elementwise-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=8.355493 dtlb_page_walk_rate=0.141743%
+kernel=vector-elementwise-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.189443 dtlb_page_walk_rate=0.156081%
+kernel=vector-elementwise-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.422936 dtlb_page_walk_rate=0.150639%
+kernel=vector-elementwise-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.243273 dtlb_page_walk_rate=0.221613%
+kernel=vector-elementwise-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=3.772296 dtlb_page_walk_rate=0.229095%
+kernel=vector-elementwise-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.343339 dtlb_page_walk_rate=0.198345%
+kernel=vector-elementwise-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=12.503539 dtlb_page_walk_rate=0.230589%
+kernel=vector-elementwise-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.699562 dtlb_page_walk_rate=0.195373%
+kernel=vector-elementwise-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=5.026743 dtlb_page_walk_rate=0.228319%
+kernel=vector-elementwise-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.883258 dtlb_page_walk_rate=0.193933%
+kernel=vector-elementwise-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=10.610744 dtlb_page_walk_rate=0.192298%
+kernel=vector-elementwise-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=9.260499 dtlb_page_walk_rate=0.192425%
+kernel=vector-elementwise-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=31.315558 dtlb_page_walk_rate=0.227183%
+kernel=vector-elementwise-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=32.752065 dtlb_page_walk_rate=0.191037%
+kernel=vector-elementwise-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=68.904042 dtlb_page_walk_rate=0.192982%
+kernel=vector-elementwise-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=150.602203 dtlb_page_walk_rate=0.191354%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.262469 l1_load_miss_rate=4.007231% l2_miss_rate=29.629630% llc_miss_rate=8.398950%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.284790 l1_load_miss_rate=4.020570% l2_miss_rate=11.467890% llc_miss_rate=3.918495%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.279301 l1_load_miss_rate=4.102605% l2_miss_rate=7.659574% llc_miss_rate=2.512212%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=4.055745 l1_load_miss_rate=4.204893% l2_miss_rate=4.343330% llc_miss_rate=1.662708%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.267408 l1_load_miss_rate=4.177540% l2_miss_rate=4.035178% llc_miss_rate=1.569416%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.214860 l1_load_miss_rate=3.947305% l2_miss_rate=3.482850% llc_miss_rate=1.762343%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.349491 l1_load_miss_rate=3.941830% l2_miss_rate=1.206855% llc_miss_rate=0.711595%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.843699 l1_load_miss_rate=3.939641% l2_miss_rate=1.452697% llc_miss_rate=0.926872%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.835216 l1_load_miss_rate=3.934965% l2_miss_rate=1.485103% llc_miss_rate=0.990744%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.976740 l1_load_miss_rate=3.930921% l2_miss_rate=1.609780% llc_miss_rate=0.971968%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.492670 l1_load_miss_rate=3.938177% l2_miss_rate=1.764332% llc_miss_rate=1.023566%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.499856 l1_load_miss_rate=3.937062% l2_miss_rate=2.055309% llc_miss_rate=1.147927%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=9.872750 l1_load_miss_rate=3.935626% l2_miss_rate=1.853750% llc_miss_rate=1.019438%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=18.316817 l1_load_miss_rate=3.939514% l2_miss_rate=1.953697% llc_miss_rate=1.086097%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=40.989437 l1_load_miss_rate=3.947975% l2_miss_rate=1.700090% llc_miss_rate=0.943489%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=60.609392 l1_load_miss_rate=3.950875% l2_miss_rate=1.852005% llc_miss_rate=0.988808%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=129.571141 l1_load_miss_rate=3.949132% l2_miss_rate=1.820309% llc_miss_rate=0.980132%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.268701 l1_load_miss_rate=4.054054% l2_miss_rate=15.094340% llc_miss_rate=3.791469%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.249064 l1_load_miss_rate=4.113231% l2_miss_rate=18.260870% llc_miss_rate=6.167401%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.263862 l1_load_miss_rate=4.144417% l2_miss_rate=9.210526% llc_miss_rate=3.012912%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.976567 l1_load_miss_rate=4.206924% l2_miss_rate=6.790800% llc_miss_rate=2.143845%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.262779 l1_load_miss_rate=4.189848% l2_miss_rate=1.827160% llc_miss_rate=0.838432%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.304747 l1_load_miss_rate=3.930726% l2_miss_rate=4.720233% llc_miss_rate=2.289684%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.358388 l1_load_miss_rate=3.874768% l2_miss_rate=1.205560% llc_miss_rate=0.696791%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=13.831853 l1_load_miss_rate=3.931754% l2_miss_rate=1.954537% llc_miss_rate=1.133685%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.718879 l1_load_miss_rate=3.934083% l2_miss_rate=1.556945% llc_miss_rate=1.022331%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.926927 l1_load_miss_rate=3.938577% l2_miss_rate=1.699340% llc_miss_rate=1.002989%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.370793 l1_load_miss_rate=3.935191% l2_miss_rate=1.792710% llc_miss_rate=1.034909%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.374534 l1_load_miss_rate=3.938381% l2_miss_rate=2.268306% llc_miss_rate=1.227888%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.385709 l1_load_miss_rate=3.940677% l2_miss_rate=1.939175% llc_miss_rate=1.038013%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=16.592375 l1_load_miss_rate=3.945803% l2_miss_rate=1.846948% llc_miss_rate=1.038532%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=41.503374 l1_load_miss_rate=3.947449% l2_miss_rate=1.931951% llc_miss_rate=1.063818%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=63.126520 l1_load_miss_rate=3.960267% l2_miss_rate=1.983032% llc_miss_rate=1.103405%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=139.265097 l1_load_miss_rate=3.952966% l2_miss_rate=1.735535% llc_miss_rate=0.954786%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.247350 l1_load_miss_rate=4.061372% l2_miss_rate=13.333333% llc_miss_rate=3.661327%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.225220 l1_load_miss_rate=4.024961% l2_miss_rate=20.289855% llc_miss_rate=6.796117%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.233454 l1_load_miss_rate=4.166335% l2_miss_rate=7.306889% llc_miss_rate=2.452698%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.803334 l1_load_miss_rate=4.206416% l2_miss_rate=3.516029% llc_miss_rate=1.430374%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.259954 l1_load_miss_rate=4.191193% l2_miss_rate=2.648676% llc_miss_rate=1.155691%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.333351 l1_load_miss_rate=3.950901% l2_miss_rate=4.735596% llc_miss_rate=2.215112%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.354811 l1_load_miss_rate=3.942449% l2_miss_rate=1.084991% llc_miss_rate=0.647903%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=12.802426 l1_load_miss_rate=3.941166% l2_miss_rate=1.536507% llc_miss_rate=0.903123%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.668535 l1_load_miss_rate=4.012647% l2_miss_rate=1.762303% llc_miss_rate=1.112853%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.225893 l1_load_miss_rate=3.937742% l2_miss_rate=1.528441% llc_miss_rate=0.936074%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.308457 l1_load_miss_rate=3.947764% l2_miss_rate=1.693197% llc_miss_rate=0.969204%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=11.582564 l1_load_miss_rate=3.937077% l2_miss_rate=1.993335% llc_miss_rate=1.134279%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.301543 l1_load_miss_rate=3.946672% l2_miss_rate=2.006202% llc_miss_rate=1.052108%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=18.957841 l1_load_miss_rate=3.937346% l2_miss_rate=1.830113% llc_miss_rate=1.022227%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=37.005487 l1_load_miss_rate=3.944948% l2_miss_rate=1.832924% llc_miss_rate=1.010032%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=59.808149 l1_load_miss_rate=3.952668% l2_miss_rate=1.884250% llc_miss_rate=1.023760%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=138.653548 l1_load_miss_rate=3.950498% l2_miss_rate=1.681282% llc_miss_rate=0.916306%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.236491 l1_load_miss_rate=3.980700% l2_miss_rate=12.844037% llc_miss_rate=3.211009%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.307974 l1_load_miss_rate=4.728600% l2_miss_rate=31.506849% llc_miss_rate=16.502732%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.238875 l1_load_miss_rate=4.114932% l2_miss_rate=7.478632% llc_miss_rate=2.377717%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.992887 l1_load_miss_rate=4.188966% l2_miss_rate=3.748734% llc_miss_rate=1.546176%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.271796 l1_load_miss_rate=4.188916% l2_miss_rate=2.078179% llc_miss_rate=0.919440%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.286684 l1_load_miss_rate=3.937385% l2_miss_rate=4.246396% llc_miss_rate=1.969844%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.401077 l1_load_miss_rate=3.940156% l2_miss_rate=1.327973% llc_miss_rate=0.799173%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=7.829694 l1_load_miss_rate=3.936981% l2_miss_rate=1.644656% llc_miss_rate=0.985905%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.799018 l1_load_miss_rate=3.936842% l2_miss_rate=1.540997% llc_miss_rate=1.015815%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.129784 l1_load_miss_rate=3.939428% l2_miss_rate=2.213368% llc_miss_rate=1.302718%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.882126 l1_load_miss_rate=3.938267% l2_miss_rate=2.158902% llc_miss_rate=1.234293%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=7.111155 l1_load_miss_rate=3.935944% l2_miss_rate=1.660782% llc_miss_rate=0.942324%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.383305 l1_load_miss_rate=3.941304% l2_miss_rate=2.175869% llc_miss_rate=1.169357%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=15.851956 l1_load_miss_rate=3.942916% l2_miss_rate=1.967903% llc_miss_rate=1.037356%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=43.069792 l1_load_miss_rate=3.952026% l2_miss_rate=1.985292% llc_miss_rate=1.079056%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=60.576440 l1_load_miss_rate=3.952243% l2_miss_rate=1.917390% llc_miss_rate=1.003936%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=129.495449 l1_load_miss_rate=3.949189% l2_miss_rate=1.811542% llc_miss_rate=0.984047%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.243413 l1_load_miss_rate=4.116587% l2_miss_rate=14.414414% llc_miss_rate=3.818616%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.271836 l1_load_miss_rate=4.036295% l2_miss_rate=10.360360% llc_miss_rate=3.469080%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.272648 l1_load_miss_rate=4.170654% l2_miss_rate=7.559395% llc_miss_rate=2.333333%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.640331 l1_load_miss_rate=4.206924% l2_miss_rate=3.600000% llc_miss_rate=1.496259%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.263991 l1_load_miss_rate=4.185971% l2_miss_rate=2.337146% llc_miss_rate=1.014024%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.441622 l1_load_miss_rate=3.971009% l2_miss_rate=5.132153% llc_miss_rate=3.340841%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.361483 l1_load_miss_rate=3.938737% l2_miss_rate=1.653804% llc_miss_rate=1.507824%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=4.664669 l1_load_miss_rate=3.936562% l2_miss_rate=1.925199% llc_miss_rate=1.134811%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.718930 l1_load_miss_rate=3.944186% l2_miss_rate=1.875501% llc_miss_rate=1.181938%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.953176 l1_load_miss_rate=3.935454% l2_miss_rate=1.423394% llc_miss_rate=0.905081%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.532735 l1_load_miss_rate=3.948412% l2_miss_rate=1.703271% llc_miss_rate=0.995363%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=10.561292 l1_load_miss_rate=3.933533% l2_miss_rate=1.718470% llc_miss_rate=0.982225%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=9.684548 l1_load_miss_rate=3.937126% l2_miss_rate=1.803750% llc_miss_rate=1.011028%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=15.990044 l1_load_miss_rate=3.945724% l2_miss_rate=1.974313% llc_miss_rate=1.047322%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=39.071485 l1_load_miss_rate=3.943189% l2_miss_rate=1.960611% llc_miss_rate=1.089003%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=63.851821 l1_load_miss_rate=3.951607% l2_miss_rate=1.752744% llc_miss_rate=0.966452%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=139.246712 l1_load_miss_rate=3.952725% l2_miss_rate=1.690594% llc_miss_rate=0.927105%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.205253 dtlb_page_walk_rate=0.091575%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.222584 dtlb_page_walk_rate=0.094473%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.216263 dtlb_page_walk_rate=0.119560%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=12.198581 dtlb_page_walk_rate=0.108610%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.216704 dtlb_page_walk_rate=0.109114%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.256517 dtlb_page_walk_rate=0.184697%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.310498 dtlb_page_walk_rate=0.186122%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=16.563572 dtlb_page_walk_rate=0.184034%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.665660 dtlb_page_walk_rate=0.183190%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.152186 dtlb_page_walk_rate=0.182816%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.233056 dtlb_page_walk_rate=0.180698%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.847043 dtlb_page_walk_rate=0.181096%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.161111 dtlb_page_walk_rate=0.180801%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=18.502634 dtlb_page_walk_rate=0.182673%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=51.234770 dtlb_page_walk_rate=0.181117%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=60.407756 dtlb_page_walk_rate=0.180898%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=134.592594 dtlb_page_walk_rate=0.180569%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.224909 dtlb_page_walk_rate=0.090909%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.194823 dtlb_page_walk_rate=0.094518%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.230479 dtlb_page_walk_rate=0.120048%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=9.888689 dtlb_page_walk_rate=0.109038%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.230760 dtlb_page_walk_rate=0.103331%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.252070 dtlb_page_walk_rate=0.188993%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.315748 dtlb_page_walk_rate=0.186189%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=3.767698 dtlb_page_walk_rate=0.183365%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.624854 dtlb_page_walk_rate=0.184103%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.777769 dtlb_page_walk_rate=0.181753%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.194936 dtlb_page_walk_rate=0.181274%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=10.297881 dtlb_page_walk_rate=0.181233%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=7.673152 dtlb_page_walk_rate=0.180847%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=15.259443 dtlb_page_walk_rate=0.180934%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=43.008658 dtlb_page_walk_rate=0.180306%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=66.229339 dtlb_page_walk_rate=0.180616%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=131.135585 dtlb_page_walk_rate=0.180603%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.262970 dtlb_page_walk_rate=0.089246%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=12.348230 dtlb_page_walk_rate=0.093787%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.242902 dtlb_page_walk_rate=0.118511%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.537099 dtlb_page_walk_rate=0.108821%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.282346 dtlb_page_walk_rate=0.103180%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=4.996988 dtlb_page_walk_rate=0.186116%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.319194 dtlb_page_walk_rate=0.185474%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.415934 dtlb_page_walk_rate=0.185162%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=4.397531 dtlb_page_walk_rate=0.182650%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=1.184656 dtlb_page_walk_rate=0.183090%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.762693 dtlb_page_walk_rate=0.182987%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.034970 dtlb_page_walk_rate=0.180354%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=21.078421 dtlb_page_walk_rate=0.181301%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=15.068717 dtlb_page_walk_rate=0.181140%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=31.524698 dtlb_page_walk_rate=0.181493%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=72.536227 dtlb_page_walk_rate=0.181003%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=124.342602 dtlb_page_walk_rate=0.181285%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.208579 dtlb_page_walk_rate=0.087796%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=3.920402 dtlb_page_walk_rate=0.094764%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.225530 dtlb_page_walk_rate=0.119789%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=0.208619 dtlb_page_walk_rate=0.108355%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.218417 dtlb_page_walk_rate=0.103325%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=12.394386 dtlb_page_walk_rate=0.188979%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.341446 dtlb_page_walk_rate=0.185359%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=0.445660 dtlb_page_walk_rate=0.184084%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.655090 dtlb_page_walk_rate=0.182992%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=5.011284 dtlb_page_walk_rate=0.183089%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=1.861287 dtlb_page_walk_rate=0.182374%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=2.324299 dtlb_page_walk_rate=0.180976%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=9.087226 dtlb_page_walk_rate=0.181014%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=25.658422 dtlb_page_walk_rate=0.180904%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=36.070045 dtlb_page_walk_rate=0.180519%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=59.984297 dtlb_page_walk_rate=0.181457%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=128.261431 dtlb_page_walk_rate=0.180942%
+kernel=scalar-vector-multiply elements=1024 stride=1 pattern=stride threads=1 elapsed_ms=0.211373 dtlb_page_walk_rate=0.090621%
+kernel=scalar-vector-multiply elements=2048 stride=1 pattern=stride threads=1 elapsed_ms=0.198740 dtlb_page_walk_rate=0.093721%
+kernel=scalar-vector-multiply elements=4096 stride=1 pattern=stride threads=1 elapsed_ms=0.218507 dtlb_page_walk_rate=0.120077%
+kernel=scalar-vector-multiply elements=8192 stride=1 pattern=stride threads=1 elapsed_ms=3.637425 dtlb_page_walk_rate=0.108834%
+kernel=scalar-vector-multiply elements=16384 stride=1 pattern=stride threads=1 elapsed_ms=0.228455 dtlb_page_walk_rate=0.103337%
+kernel=scalar-vector-multiply elements=32768 stride=1 pattern=stride threads=1 elapsed_ms=0.276245 dtlb_page_walk_rate=0.186137%
+kernel=scalar-vector-multiply elements=65536 stride=1 pattern=stride threads=1 elapsed_ms=0.336267 dtlb_page_walk_rate=0.189064%
+kernel=scalar-vector-multiply elements=131072 stride=1 pattern=stride threads=1 elapsed_ms=4.110115 dtlb_page_walk_rate=0.184088%
+kernel=scalar-vector-multiply elements=262144 stride=1 pattern=stride threads=1 elapsed_ms=0.492076 dtlb_page_walk_rate=0.182607%
+kernel=scalar-vector-multiply elements=524288 stride=1 pattern=stride threads=1 elapsed_ms=0.758943 dtlb_page_walk_rate=0.181363%
+kernel=scalar-vector-multiply elements=1048576 stride=1 pattern=stride threads=1 elapsed_ms=2.242557 dtlb_page_walk_rate=0.183849%
+kernel=scalar-vector-multiply elements=2097152 stride=1 pattern=stride threads=1 elapsed_ms=6.537897 dtlb_page_walk_rate=0.181975%
+kernel=scalar-vector-multiply elements=8388608 stride=1 pattern=stride threads=1 elapsed_ms=8.680218 dtlb_page_walk_rate=0.180757%
+kernel=scalar-vector-multiply elements=16777216 stride=1 pattern=stride threads=1 elapsed_ms=15.998309 dtlb_page_walk_rate=0.181077%
+kernel=scalar-vector-multiply elements=33554432 stride=1 pattern=stride threads=1 elapsed_ms=30.378343 dtlb_page_walk_rate=0.181068%
+kernel=scalar-vector-multiply elements=67108864 stride=1 pattern=stride threads=1 elapsed_ms=65.667984 dtlb_page_walk_rate=0.180802%
+kernel=scalar-vector-multiply elements=134217728 stride=1 pattern=stride threads=1 elapsed_ms=141.486013 dtlb_page_walk_rate=0.180895%
